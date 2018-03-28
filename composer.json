@@ -1,0 +1,19 @@
+{
+    "name": "codeid/accounting-system",
+    "type": "typo3-cms-extension",
+    "description": "This is an extention for basic accounting needs",
+    "authors": [
+        {
+            "name": "Fiacre Sankara",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^8.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodeID\\AccountingSystem\\": "Classes"
+        }
+    }
+}

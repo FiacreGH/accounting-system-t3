@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-03-28T18:35:33Z" product-name="accounting_system">
+		<header/>
+		<body>
+			<trans-unit id="tx_accountingsystem_domain_model_patient">
+				<source>Patient</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.nom">
+				<source>Nom</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.prenoms">
+				<source>Prenoms</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.adresse">
+				<source>Adresse</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.telephoneportable">
+				<source>Telephoneportable</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.telephonefixe">
+				<source>Telephonefixe</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.mail">
+				<source>Mail</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.datenaissance">
+				<source>Datenaissance</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.commentaires">
+				<source>Commentaires</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.anamnese">
+				<source>Anamnese</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.accidents">
+				<source>Accidents</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.operations">
+				<source>Operations</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.maladies">
+				<source>Maladies</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.traitements">
+				<source>Traitements</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.divers">
+				<source>Divers</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.consultation">
+				<source>Consultation</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation">
+				<source>Consultation</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.facture">
+				<source>Facture</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_facture">
+				<source>Facture</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

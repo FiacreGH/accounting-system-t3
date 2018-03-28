@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-03-28T18:35:33Z" product-name="accounting_system">
+		<header/>
+		<body>
+			<trans-unit id="nom.description">
+				<source>nom</source>
+			</trans-unit>
+			<trans-unit id="prenoms.description">
+				<source>prenoms</source>
+			</trans-unit>
+			<trans-unit id="adresse.description">
+				<source>adresse</source>
+			</trans-unit>
+			<trans-unit id="telephoneportable.description">
+				<source>telephoneportable</source>
+			</trans-unit>
+			<trans-unit id="telephonefixe.description">
+				<source>telephonefixe</source>
+			</trans-unit>
+			<trans-unit id="mail.description">
+				<source>mail</source>
+			</trans-unit>
+			<trans-unit id="datenaissance.description">
+				<source>datenaissance</source>
+			</trans-unit>
+			<trans-unit id="commentaires.description">
+				<source>commentaires</source>
+			</trans-unit>
+			<trans-unit id="anamnese.description">
+				<source>anamnese</source>
+			</trans-unit>
+			<trans-unit id="accidents.description">
+				<source>accidents</source>
+			</trans-unit>
+			<trans-unit id="operations.description">
+				<source>operations</source>
+			</trans-unit>
+			<trans-unit id="maladies.description">
+				<source>maladies</source>
+			</trans-unit>
+			<trans-unit id="traitements.description">
+				<source>traitements</source>
+			</trans-unit>
+			<trans-unit id="divers.description">
+				<source>divers</source>
+			</trans-unit>
+			<trans-unit id="consultation.description">
+				<source>consultation</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
