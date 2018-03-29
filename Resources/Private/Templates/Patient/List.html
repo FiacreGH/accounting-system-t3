@@ -62,5 +62,31 @@ Otherwise your changes will be overwritten the next time you save the extension 
 </table>
 
 <f:link.action action="new">New Patient</f:link.action>
+
+	<table id="table_id" class="display">
+		<thead>
+		<tr>
+			<th>
+				<f:translate key="tx_accountingsystem_domain_model_patient.nom"/>
+			</th>
+			<th>
+				<f:translate key="tx_accountingsystem_domain_model_patient.prenoms"/>
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+		<f:for each="{patients}" as="patient">
+			<tr>
+				<td>
+					<f:link.action action="show" arguments="{patient : patient}"> {patient.nom}</f:link.action>
+				</td>
+				<td>
+					{patient.prenoms}
+				</td>
+			</tr>
+		</f:for>
+		</tbody>
+	</table>
+
 </f:section>
 </html>

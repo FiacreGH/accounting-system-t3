@@ -23,6 +23,23 @@ plugin.tx_accountingsystem_accountingsystem {
         #callDefaultActionIfActionCantBeResolved = 1
     }
 }
+page = PAGE
+page{
+    includeCSSLibs {
+        cloudflare = https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css
+        cloudflare {
+            external = 1
+        }
+    }
+
+    includeJSLibs {
+        cloudflare = https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js
+        cloudflare {
+            external = 1
+        }
+
+    }
+}
 
 # these classes are only used in auto-generated templates
 plugin.tx_accountingsystem._CSS_DEFAULT_STYLE (
