@@ -4,49 +4,49 @@
 		<header/>
 		<body>
 			<trans-unit id="nom.description">
-				<source>nom</source>
+				<source>Nom</source>
 			</trans-unit>
 			<trans-unit id="prenoms.description">
-				<source>prenoms</source>
+				<source>Prénom(s)</source>
 			</trans-unit>
 			<trans-unit id="adresse.description">
-				<source>adresse</source>
+				<source>Adresse</source>
 			</trans-unit>
 			<trans-unit id="telephoneportable.description">
-				<source>telephoneportable</source>
+				<source>Portable</source>
 			</trans-unit>
 			<trans-unit id="telephonefixe.description">
-				<source>telephonefixe</source>
+				<source>Fixe</source>
 			</trans-unit>
 			<trans-unit id="mail.description">
-				<source>mail</source>
+				<source>Mail</source>
 			</trans-unit>
 			<trans-unit id="datenaissance.description">
-				<source>datenaissance</source>
+				<source>Date de naissance</source>
 			</trans-unit>
 			<trans-unit id="commentaires.description">
-				<source>commentaires</source>
+				<source>Commentaire</source>
 			</trans-unit>
 			<trans-unit id="anamnese.description">
-				<source>anamnese</source>
+				<source>Anamnese</source>
 			</trans-unit>
 			<trans-unit id="accidents.description">
-				<source>accidents</source>
+				<source>Accidents</source>
 			</trans-unit>
 			<trans-unit id="operations.description">
-				<source>operations</source>
+				<source>Operations</source>
 			</trans-unit>
 			<trans-unit id="maladies.description">
-				<source>maladies</source>
+				<source>Maladies</source>
 			</trans-unit>
 			<trans-unit id="traitements.description">
-				<source>traitements</source>
+				<source>Traitements</source>
 			</trans-unit>
 			<trans-unit id="divers.description">
-				<source>divers</source>
+				<source>Divers</source>
 			</trans-unit>
 			<trans-unit id="consultation.description">
-				<source>consultation</source>
+				<source>Consultation</source>
 			</trans-unit>
 		</body>
 	</file>

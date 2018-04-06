@@ -10,22 +10,22 @@
 				<source>Nom</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.prenoms">
-				<source>Prenoms</source>
+				<source>Prénom(s)</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.adresse">
 				<source>Adresse</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.telephoneportable">
-				<source>Telephoneportable</source>
+				<source>Portable</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.telephonefixe">
-				<source>Telephonefixe</source>
+				<source>Fixe</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.mail">
 				<source>Mail</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.datenaissance">
-				<source>Datenaissance</source>
+				<source>Date de naissance</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.commentaires">
 				<source>Commentaires</source>

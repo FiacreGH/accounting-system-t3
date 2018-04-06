@@ -1,5 +1,5 @@
 
-plugin.tx_accountingsystem_accountingsystem {
+plugin.tx_accountingsystem {
     view {
         templateRootPaths.0 = EXT:accounting_system/Resources/Private/Templates/
         templateRootPaths.1 = {$plugin.tx_accountingsystem_accountingsystem.view.templateRootPath}
@@ -32,7 +32,7 @@ page{
         }
     }
 
-    includeJSLibs {
+    includeJSFooterlibs {
         cloudflare = https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js
         cloudflare {
             external = 1
@@ -40,6 +40,9 @@ page{
 
     }
 }
+
+# Add JS library to default page object
+page.includeJS.accountingsystem = EXT:accounting_system/Resources/Public/JavaScript/Additionnal/additionnal.js
 
 # these classes are only used in auto-generated templates
 plugin.tx_accountingsystem._CSS_DEFAULT_STYLE (

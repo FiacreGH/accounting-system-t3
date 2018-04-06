@@ -1,67 +1,22 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
+<f:layout name="Default"/>
 
 This Template is responsible for creating a table of domain objects.
 
 If you modify this template, do not forget to change the overwrite settings
 in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        List.html: keep
+Resources:
+Private:
+Templates:
+List.html: keep
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
-<h1>Listing for Patient</h1>
-	<f:render partial="Search/SearchForm" arguments="{_all}" />
-	<br/>
+	<h1>Liste des patients</h1>
 	<f:flashMessages/>
-<f:flashMessages />
+	<f:flashMessages/>
 
-<table  class="tx_accountingsystem" >
-	<tr>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.nom" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.prenoms" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.adresse" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.telephoneportable" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.telephonefixe" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.mail" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.datenaissance" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.commentaires" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.anamnese" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.accidents" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.operations" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.maladies" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.traitements" /></th>
-		<th><f:translate key="tx_accountingsystem_domain_model_patient.divers" /></th>
-		<th> </th>
-		<th> </th>
-	</tr>
-
-	<f:for each="{patients}" as="patient">
-		<tr>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.nom}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.prenoms}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.adresse}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.telephoneportable}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.telephonefixe}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.mail}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.datenaissance}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.commentaires}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.anamnese}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.accidents}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.operations}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.maladies}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.traitements}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{patient : patient}"> {patient.divers}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{patient : patient}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{patient : patient}">Delete</f:link.action></td>
-		</tr>
-	</f:for>
-</table>
-
-<f:link.action action="new">New Patient</f:link.action>
 
 	<table id="table_id" class="display">
 		<thead>
@@ -71,6 +26,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			</th>
 			<th>
 				<f:translate key="tx_accountingsystem_domain_model_patient.prenoms"/>
+			</th>
+			<th>
+				<f:translate key="tx_accountingsystem_domain_model_patient.adresse"/>
+			</th>
+			<th>
+				<f:translate key="tx_accountingsystem_domain_model_patient.traitements"/>
 			</th>
 		</tr>
 		</thead>
@@ -83,10 +44,18 @@ Otherwise your changes will be overwritten the next time you save the extension 
 				<td>
 					{patient.prenoms}
 				</td>
+				<td>
+					{patient.adresse}
+				</td>
+				<td>
+					{patient.traitements}
+				</td>
 			</tr>
 		</f:for>
 		</tbody>
 	</table>
-
+	<f:link.action action="new">
+		<f:form.button additionalAttributes="{class:'btn btn-primary'}">Ajouter Patient</f:form.button>
+	</f:link.action>
 </f:section>
 </html>
