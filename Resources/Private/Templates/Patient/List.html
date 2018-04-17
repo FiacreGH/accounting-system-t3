@@ -33,6 +33,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			<th>
 				<f:translate key="tx_accountingsystem_domain_model_patient.traitements"/>
 			</th>
+			<th>
+				Action
+			</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -49,6 +52,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
 				</td>
 				<td>
 					{patient.traitements}
+				</td>
+				<td>
+					<f:link.action action="edit" arguments="{patient : patient}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
+					&nbsp; &nbsp; &nbsp;
+					<f:link.action action="delete" arguments="{patient : patient}"><span class="glyphicon glyphicon-trash"></span></f:link.action>
 				</td>
 			</tr>
 		</f:for>

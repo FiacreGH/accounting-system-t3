@@ -1,58 +1,225 @@
+<!--<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">-->
+<!--<label for="nom">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.nom" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="nom" /><br />-->
+<!--<label for="prenoms">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.prenoms" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="prenoms" /><br />-->
+<!--<label for="adresse">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.adresse" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="adresse" /><br />-->
+<!--<label for="telephoneportable">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.telephoneportable" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="telephoneportable" /><br />-->
+<!--<label for="telephonefixe">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.telephonefixe" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="telephonefixe" /><br />-->
+<!--<label for="mail">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.mail" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="mail" /><br />-->
+<!--<label for="datenaissance">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.datenaissance" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="datenaissance" /><br />-->
+<!--<label for="commentaires">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.commentaires" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="commentaires" /><br />-->
+<!--<label for="anamnese">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.anamnese" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="anamnese" /><br />-->
+<!--<label for="accidents">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.accidents" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="accidents" /><br />-->
+<!--<label for="operations">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.operations" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="operations" /><br />-->
+<!--<label for="maladies">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.maladies" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="maladies" /><br />-->
+<!--<label for="traitements">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.traitements" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="traitements" /><br />-->
+<!--<label for="divers">-->
+<!--<f:translate key="tx_accountingsystem_domain_model_patient.divers" />-->
+<!--</label><br />-->
+<!--<f:form.textfield property="divers" /><br />-->
+<!--</html>-->
+
+
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<label for="nom">
-	<f:translate key="tx_accountingsystem_domain_model_patient.nom" />
-</label><br />
-	<f:form.textfield property="nom" /><br />
-<label for="prenoms">
-	<f:translate key="tx_accountingsystem_domain_model_patient.prenoms" />
-</label><br />
-	<f:form.textfield property="prenoms" /><br />
-<label for="adresse">
-	<f:translate key="tx_accountingsystem_domain_model_patient.adresse" />
-</label><br />
-	<f:form.textfield property="adresse" /><br />
-<label for="telephoneportable">
-	<f:translate key="tx_accountingsystem_domain_model_patient.telephoneportable" />
-</label><br />
-	<f:form.textfield property="telephoneportable" /><br />
-<label for="telephonefixe">
-	<f:translate key="tx_accountingsystem_domain_model_patient.telephonefixe" />
-</label><br />
-	<f:form.textfield property="telephonefixe" /><br />
-<label for="mail">
-	<f:translate key="tx_accountingsystem_domain_model_patient.mail" />
-</label><br />
-	<f:form.textfield property="mail" /><br />
-<label for="datenaissance">
-	<f:translate key="tx_accountingsystem_domain_model_patient.datenaissance" />
-</label><br />
-	<f:form.textfield property="datenaissance" /><br />
-<label for="commentaires">
-	<f:translate key="tx_accountingsystem_domain_model_patient.commentaires" />
-</label><br />
-	<f:form.textfield property="commentaires" /><br />
-<label for="anamnese">
-	<f:translate key="tx_accountingsystem_domain_model_patient.anamnese" />
-</label><br />
-	<f:form.textfield property="anamnese" /><br />
-<label for="accidents">
-	<f:translate key="tx_accountingsystem_domain_model_patient.accidents" />
-</label><br />
-	<f:form.textfield property="accidents" /><br />
-<label for="operations">
-	<f:translate key="tx_accountingsystem_domain_model_patient.operations" />
-</label><br />
-	<f:form.textfield property="operations" /><br />
-<label for="maladies">
-	<f:translate key="tx_accountingsystem_domain_model_patient.maladies" />
-</label><br />
-	<f:form.textfield property="maladies" /><br />
-<label for="traitements">
-	<f:translate key="tx_accountingsystem_domain_model_patient.traitements" />
-</label><br />
-	<f:form.textfield property="traitements" /><br />
-<label for="divers">
-	<f:translate key="tx_accountingsystem_domain_model_patient.divers" />
-</label><br />
-	<f:form.textfield property="divers" /><br />
+<div class="row">
+	<f:link.action action="list">Retour à la liste</f:link.action>
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<div>
+			<div id="accordion">
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<h5 class="mb-0">
+							<button class="btn btn-link"
+							        data-toggle="collapse"
+							        data-target="#collapseOne"
+							        aria-expanded="false"
+							        aria-controls="collapseOne">
+								Patient
+							</button>
+						</h5>
+					</div>
+
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
+								<div class="form-group row">
+									<label for="prenoms" class="col-sm-3 col-form-label">
+										<f:translate key="tx_accountingsystem_domain_model_patient.prenoms"/>
+									</label>
+									<div class="col-sm-9">
+										<f:form.textfield class="form-control" property="prenoms"/>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="nom" class="col-sm-3 col-form-label">
+										<f:translate key="tx_accountingsystem_domain_model_patient.nom"/>
+									</label>
+									<div class="col-sm-9">
+										<f:form.textfield class="form-control" property="nom"/>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="adresse" class="col-sm-3 col-form-label">
+										<f:translate key="tx_accountingsystem_domain_model_patient.adresse"/>
+									</label>
+									<div class="col-sm-9">
+										<f:form.textfield class="form-control" property="adresse"/>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="telephoneportable" class="col-sm-3 col-form-label">
+										<f:translate key="tx_accountingsystem_domain_model_patient.telephoneportable"/>
+									</label>
+									<div class="col-sm-9">
+										<f:form.textfield class="form-control" property="telephoneportable"/>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="telephonefixe" class="col-sm-3 col-form-label">
+										<f:translate key="tx_accountingsystem_domain_model_patient.telephonefixe"/>
+									</label>
+									<div class="col-sm-9">
+										<f:form.textfield class="form-control" property="telephonefixe"/>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="mail" class="col-sm-3 col-form-label">
+										<f:translate key="tx_accountingsystem_domain_model_patient.mail"/>
+									</label>
+									<div class="col-sm-9">
+										<f:form.textfield class="form-control" property="mail"/>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="datenaissance" class="col-sm-3 col-form-label">Naissance</label>
+									<div class="col-sm-9">
+										<f:form.textfield class="form-control" property="datenaissance"/>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="divers" class="col-sm-3 col-form-label">
+										<f:translate key="tx_accountingsystem_domain_model_patient.divers"/>
+									</label>
+									<div class="col-sm-9">
+										<f:form.textfield class="form-control" property="divers"/>
+									</div>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-8">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item active">
+				<a class="nav-link"
+				   id="home-tab"
+				   data-toggle="tab"
+				   href="#home"
+				   role="tab"
+				   aria-controls="home"
+				   aria-expanded="true">Informations
+				</a>
+			</li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<form>
+					<div class="form-group row">
+						<label for="accidents" class="col-sm-2 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.accidents"/>
+						</label>
+						<div class="col-sm-10">
+							<f:form.textfield class="form-control" property="accidents"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="operations" class="col-sm-2 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.operations"/>
+						</label>
+						<div class="col-sm-10">
+							<f:form.textfield class="form-control" property="operations"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="maladies" class="col-sm-2 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.maladies"/>
+						</label>
+						<div class="col-sm-10">
+							<f:form.textfield class="form-control" property="maladies"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="traitements" class="col-sm-2 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.traitements"/>
+						</label>
+						<div class="col-sm-10">
+							<f:form.textfield class="form-control" property="traitements"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="anamnese" class="col-sm-2 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.anamnese"/>
+						</label>
+						<div class="col-sm-10">
+							<f:form.textfield class="form-control" property="anamnese"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="commentaires" class="col-sm-2 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.commentaires"/>
+						</label>
+						<div class="col-sm-10">
+							<f:form.textfield class="form-control" property="commentaires"/>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<f:form.submit additionalAttributes="{class:'btn btn-primary'}" value="Valider"/>
+</div>
 </html>
