@@ -23,7 +23,7 @@
 									<label class="col-sm-3 col-form-label">
 										<f:translate key="tx_accountingsystem_domain_model_patient.prenoms"/>
 									</label>
-									<div class="col-sm-9">
+									<div class="input-group col-sm-9">
 										<input type="text" readonly class="form-control" value="{patient.prenoms}">
 									</div>
 								</div>
@@ -31,7 +31,7 @@
 									<label class="col-sm-3 col-form-label">
 										<f:translate key="tx_accountingsystem_domain_model_patient.nom"/>
 									</label>
-									<div class="col-sm-9">
+									<div class="input-group col-sm-9">
 										<input type="text" readonly class="form-control" value="{patient.nom}">
 									</div>
 								</div>
@@ -39,7 +39,7 @@
 									<label class="col-sm-3 col-form-label">
 										<f:translate key="tx_accountingsystem_domain_model_patient.adresse"/>
 									</label>
-									<div class="col-sm-9">
+									<div class="input-group col-sm-9">
 										<input type="text" readonly class="form-control" value="{patient.adresse}">
 									</div>
 								</div>
@@ -47,7 +47,7 @@
 									<label class="col-sm-3 col-form-label">
 										<f:translate key="tx_accountingsystem_domain_model_patient.telephoneportable"/>
 									</label>
-									<div class="col-sm-9">
+									<div class="input-group col-sm-9">
 										<input type="text"
 										       readonly
 										       class="form-control"
@@ -58,7 +58,7 @@
 									<label class="col-sm-3 col-form-label">
 										<f:translate key="tx_accountingsystem_domain_model_patient.telephonefixe"/>
 									</label>
-									<div class="col-sm-9">
+									<div class="input-group col-sm-9">
 										<input type="text"
 										       readonly
 										       class="form-control"
@@ -69,24 +69,25 @@
 									<label class="col-sm-3 col-form-label">
 										<f:translate key="tx_accountingsystem_domain_model_patient.mail"/>
 									</label>
-									<div class="col-sm-9">
+									<div class="input-group col-sm-9">
 										<input type="text" readonly class="form-control" value="{patient.mail}">
+										<span class="btn input-group-addon"onclick="function redidect(){
+										var mailto_link = 'mailto:' + '{patient.mail}'
+										window = window.open(mailto_link, 'emailWindow')};
+										redidect();"> @</span>
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">Naissance</label>
-									<div class="col-sm-9">
-										<input type="text"
-										       readonly
-										       class="form-control"
-										       value="{patient.datenaissance}">
+									<div class="input-group col-sm-9">
+										<input type="text" readonly class="form-control" value="{patient.datenaissance}">
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">
 										<f:translate key="tx_accountingsystem_domain_model_patient.divers"/>
 									</label>
-									<div class="col-sm-9">
+									<div class="input-group col-sm-9">
 										<input type="text" readonly class="form-control" value="{patient.divers}">
 									</div>
 								</div>
