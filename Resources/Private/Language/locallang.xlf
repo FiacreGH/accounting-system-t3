@@ -10,7 +10,7 @@
 				<source>Nom</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.prenoms">
-				<source>Prénom(s)</source>
+				<source>Prénom</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.adresse">
 				<source>Adresse</source>

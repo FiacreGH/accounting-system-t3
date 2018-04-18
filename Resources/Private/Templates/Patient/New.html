@@ -13,6 +13,8 @@ New.html: keep
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
+	<f:link.action action="list">Retour à la liste</f:link.action>
+	<br/>
 	<h1>Nouveau Patient</h1>
 
 	<f:flashMessages/>
@@ -20,7 +22,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 	<f:render partial="FormErrors" arguments="{object:Patient}"/>
 
 	<f:form action="create" name="newPatient" object="{newPatient}">
-		<f:render partial="Patient/FormFields"/>
+		<f:render partial="Patient/NewForm"/>
 	</f:form>
 </f:section>
 </html>

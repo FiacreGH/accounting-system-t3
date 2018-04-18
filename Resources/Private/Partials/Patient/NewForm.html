@@ -1,7 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<div class="row">
-	<f:link.action action="list">Retour à la liste</f:link.action>
-</div>
+
 <div class="row">
 	<div class="col-md-4">
 		<div>
@@ -14,7 +12,7 @@
 							        data-target="#collapseOne"
 							        aria-expanded="false"
 							        aria-controls="collapseOne">
-								Patient
+								&nbsp;
 							</button>
 						</h5>
 					</div>
@@ -66,13 +64,13 @@
 										<f:translate key="tx_accountingsystem_domain_model_patient.mail"/>
 									</label>
 									<div class="col-sm-9">
-										<f:form.textfield additionalAttributes="{class:'form-control'}" property="mail"/>
+										<f:form.textfield additionalAttributes="{class:'form-control'}" type="email" property="mail"/>
 									</div>
 								</div>
 								<div class="form-group row">
 									<label for="datenaissance" class="col-sm-3 col-form-label">Naissance</label>
 									<div class="col-sm-9">
-										<f:form.textfield additionalAttributes="{class:'form-control'}" property="datenaissance"/>
+										<f:form.textfield additionalAttributes="{class:'form-control'}" type="date" property="datenaissance"/>
 									</div>
 								</div>
 								<div class="form-group row">
@@ -158,6 +156,6 @@
 	</div>
 </div>
 <div class="row">
-	<f:form.submit additionalAttributes="{class:'btn btn-primary'}" value="Valider"/>
+	<f:form.submit additionalAttributes="{class:'btn btn-primary'}" value="Créer"/>
 </div>
 </html>

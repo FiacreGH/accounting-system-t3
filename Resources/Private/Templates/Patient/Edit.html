@@ -13,6 +13,8 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
+  <f:link.action action="list">Retour à la liste</f:link.action>
+  <br/>
 <h1>Modification de Patient</h1>
 
 <f:flashMessages />
@@ -20,7 +22,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:render partial="FormErrors" arguments="{object:Patient}" />
 
 <f:form action="update" name="patient" object="{patient}" >
-<f:render partial="Patient/FormFields" arguments="{patient:patient}" />
+<f:render partial="Patient/EditForm" arguments="{patient:patient}" />
 </f:form>
 </f:section>
 </html>

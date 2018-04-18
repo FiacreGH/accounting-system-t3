@@ -30,6 +30,7 @@ page{
         cloudflare {
             external = 1
         }
+        theme = EXT:accounting_system/Resources/Public/Less/Theme/theme.less
     }
 
     includeJSFooterlibs {
@@ -55,10 +56,6 @@ plugin.tx_accountingsystem._CSS_DEFAULT_STYLE (
         border: 1px #FF0000 solid;
     }
 
-    .tx-accounting-system table {
-        border-collapse:separate;
-        border-spacing:10px;
-    }
 
     .tx-accounting-system table th {
         font-weight:bold;
