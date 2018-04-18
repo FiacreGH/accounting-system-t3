@@ -113,7 +113,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.nom',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -122,7 +122,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.prenoms',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -131,7 +131,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.adresse',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -140,7 +140,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.telephoneportable',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -149,7 +149,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.telephonefixe',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -158,7 +158,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.mail',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -167,7 +167,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.datenaissance',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -176,7 +176,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.commentaires',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 255,
                 'eval' => 'trim'
             ],
         ],
@@ -185,7 +185,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.anamnese',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -194,7 +194,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.accidents',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -203,7 +203,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.operations',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -212,7 +212,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.maladies',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -221,7 +221,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.traitements',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
@@ -230,7 +230,7 @@ return [
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.divers',
             'config' => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 150,
                 'eval' => 'trim'
             ],
         ],
