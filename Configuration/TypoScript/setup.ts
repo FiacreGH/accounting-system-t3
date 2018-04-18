@@ -37,7 +37,6 @@ page{
         cloudflare {
             external = 1
         }
-
     }
 }
 
