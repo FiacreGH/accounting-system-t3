@@ -11,9 +11,9 @@ call_user_func(
             [
                 'Patient' => 'list, show, new, create, edit, update, delete'
             ],
-            // non-cacheable actions
+            // Theses actions are not cached!!!
             [
-                'Patient' => 'create, update, delete'
+                'Patient' => 'list, show, new, create, edit, update, delete'
             ]
         );
 
