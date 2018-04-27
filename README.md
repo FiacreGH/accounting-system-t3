@@ -13,3 +13,5 @@ Include the EXT: typoscript setup to load it
 As it is not a composer mode EXT, run ``composer dumpautoload`` to load it classes
 
 Now you can use it plugin in a page
+
+Notice that the plugin on that page should be protected by a [frontend login](https://docs.typo3.org/typo3cms/EditorsTutorial/AccessControl/Login/Index.html)
