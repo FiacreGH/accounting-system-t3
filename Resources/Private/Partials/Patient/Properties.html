@@ -5,15 +5,13 @@
 			<div id="accordion">
 				<div class="card">
 					<div class="card-header" id="headingOne">
-						<h5 class="mb-0">
 							<button class="btn btn-link"
 							        data-toggle="collapse"
 							        data-target="#collapseOne"
 							        aria-expanded="false"
 							        aria-controls="collapseOne">
-								{patient.prenoms} {patient.nom}
+								<b>{patient.prenoms} {patient.nom}</b>
 							</button>
-						</h5>
 					</div>
 
 					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
@@ -71,10 +69,7 @@
 									</label>
 									<div class="input-group col-sm-9">
 										<input type="text" readonly class="form-control" value="{patient.mail}">
-										<span class="btn input-group-addon"onclick="function redidect(){
-										var mailto_link = 'mailto:' + '{patient.mail}'
-										window = window.open(mailto_link, 'emailWindow')};
-										redidect();"> @</span>
+										<a href="mailto:{patient.mail}" class="btn input-group-addon"> @</a>
 									</div>
 								</div>
 								<div class="form-group row">
@@ -234,14 +229,11 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-6">
 		<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="edit" arguments="{patient : patient}">Modifier</f:link.action>
 	</div>
-	<div class="col-md-4">
-		<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="" arguments="{patient : patient}">Ajouter Consultation</f:link.action>
-	</div>
-	<div class="col-md-4">
-		<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="" arguments="{patient : patient}">Ajouter Facture</f:link.action>
+	<div class="col-md-6">
+		<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="list">Retour à la liste</f:link.action>
 	</div>
 </div>
 </html>
