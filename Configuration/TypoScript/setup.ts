@@ -38,11 +38,12 @@ page{
         cloudflare {
             external = 1
         }
+        default = EXT:accounting_system/Resources/Public/JavaScript/Additionnal/additionnal.js
     }
 }
 
 # Add JS library to default page object
-page.includeJS.accountingsystem = EXT:accounting_system/Resources/Public/JavaScript/Additionnal/additionnal.js
+#page.includeJS.accountingsystem = EXT:accounting_system/Resources/Public/JavaScript/Additionnal/additionnal.js
 
 # these classes are only used in auto-generated templates
 plugin.tx_accountingsystem._CSS_DEFAULT_STYLE (
