@@ -1,0 +1,77 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+	<h1>Liste des patients</h1>
+	<f:flashMessages/>
+	<f:flashMessages/>
+
+
+	<table id="table_id" class="display">
+		<thead>
+		<tr>
+			<th>
+				<f:translate key="tx_accountingsystem_domain_model_patient.nom"/>
+			</th>
+			<th>
+				<f:translate key="tx_accountingsystem_domain_model_patient.prenoms"/>
+			</th>
+			<th>
+				<f:translate key="tx_accountingsystem_domain_model_patient.adresse"/>
+			</th>
+			<th>
+				<f:translate key="tx_accountingsystem_domain_model_patient.traitements"/>
+			</th>
+			<th>
+				Action
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+		<f:for each="{patients}" as="patient">
+			<tr>
+				<td>
+					<f:link.action action="show" arguments="{patient : patient}"> {patient.nom}</f:link.action>
+				</td>
+				<td>
+					{patient.prenoms}
+				</td>
+				<td>
+					{patient.adresse}
+				</td>
+				<td>
+					{patient.traitements}
+				</td>
+				<td>
+					<f:link.action action="edit" arguments="{patient : patient}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
+					&nbsp; &nbsp; &nbsp;
+					<f:link.action action="delete"  arguments="{patient : patient}"><span class="glyphicon glyphicon-trash" onclick="function deleteItem(event)
+					{
+					if (confirm('Êtes-vous suûr de vouloir supprimer ce patient?')){
+					}
+					else{
+						event.preventDefault();
+					}
+						return false;
+						}; deleteItem(event);"></span></f:link.action>
+				</td>
+			</tr>
+		</f:for>
+		</tbody>
+	</table>
+	<f:link.action action="new">
+		<f:form.button additionalAttributes="{class:'btn btn-primary'}">Ajouter Patient</f:form.button>
+	</f:link.action>
+</f:section>
+</html>
