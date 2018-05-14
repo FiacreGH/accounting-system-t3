@@ -5,6 +5,17 @@ call_user_func(
     function()
     {
 
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+            'accounting_system',
+            'constants',
+            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:accounting_system/Configuration/TypoScript/constants.ts">'
+        );
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTypoScript(
+            'accounting_system',
+            'setup',
+            '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:accounting_system/Configuration/TypoScript/setup.ts">'
+        );
+
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
             'CodeID.AccountingSystem',
             'Accountingsystem',
