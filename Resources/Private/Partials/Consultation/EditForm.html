@@ -1,0 +1,231 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="row">
+	<div class="col-md-4">
+		<div>
+			<div id="accordion">
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<button class="btn btn-link"
+						        data-toggle="collapse"
+						        data-target="#collapseOne"
+						        aria-expanded="false"
+						        aria-controls="collapseOne">
+							<b>{patient.prenoms} {patient.nom}</b>
+						</button>
+					</div>
+
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<div class="form-group row">
+								<label for="prenoms" class="col-sm-4 col-form-label">
+									<f:translate key="tx_accountingsystem_domain_model_patient.prenoms"/>
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" property="prenoms"/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="nom" class="col-sm-4 col-form-label">
+									<f:translate key="tx_accountingsystem_domain_model_patient.nom"/>
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" property="nom"/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="adresse" class="col-sm-4 col-form-label">
+									<f:translate key="tx_accountingsystem_domain_model_patient.adresse"/>
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" property="adresse"/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="telephoneportable" class="col-sm-4 col-form-label">
+									<f:translate key="tx_accountingsystem_domain_model_patient.telephoneportable"/>
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" property="telephoneportable"/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="telephonefixe" class="col-sm-4 col-form-label">
+									<f:translate key="tx_accountingsystem_domain_model_patient.telephonefixe"/>
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" property="telephonefixe"/>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label class="col-sm-4 col-form-label">
+									<f:translate key="tx_accountingsystem_domain_model_patient.mail"/>
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" type="email" property="mail"/>
+									<a href="mailto:{patient.mail}" class="btn input-group-addon"> @</a>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label for="datenaissance" class="col-sm-4 col-form-label">Naissance</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" type="date" property="datenaissance"/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="divers" class="col-sm-4 col-form-label">
+									<f:translate key="tx_accountingsystem_domain_model_patient.divers"/>
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" property="divers"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-8">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item active">
+				<a class="nav-link"
+				   id="home-tab"
+				   data-toggle="tab"
+				   href="#home"
+				   role="tab"
+				   aria-controls="home"
+				   aria-expanded="true">Informations
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link"
+				   id="profile-tab"
+				   data-toggle="tab"
+				   href="#profile"
+				   role="tab"
+				   aria-controls="profile"
+				   aria-selected="false">Consultations
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link"
+				   id="contact-tab"
+				   data-toggle="tab"
+				   href="#contact"
+				   role="tab"
+				   aria-controls="contact"
+				   aria-selected="false">Factures
+				</a>
+			</li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="home-tab">
+				<div class="form-group row">
+					<label for="accidents" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.accidents"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textfield additionalAttributes="{class:'form-control'}" property="accidents"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="operations" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.operations"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textfield additionalAttributes="{class:'form-control'}" property="operations"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="maladies" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.maladies"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textfield additionalAttributes="{class:'form-control'}" property="maladies"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="traitements" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.traitements"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textfield additionalAttributes="{class:'form-control'}" property="traitements"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="anamnese" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.anamnese"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textfield additionalAttributes="{class:'form-control'}" property="anamnese"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="commentaires" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.commentaires"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textarea additionalAttributes="{class:'form-control'}" property="commentaires"/>
+					</div>
+				</div>
+			</div>
+			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th scope="col">Date</th>
+						<th scope="col">Lieu</th>
+						<th scope="col">Prestation</th>
+						<th scope="col">Notes</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th scope="row">27.03.218</th>
+						<td>Torgon</td>
+						<td>1</td>
+						<td>Amélioration</td>
+					</tr>
+					<tr>
+						<th scope="row">3.04.2018</th>
+						<td>Torgon</td>
+						<td>2</td>
+						<td>Bonne ammélioration</td>
+					</tr>
+					</tbody>
+				</table>
+				<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="" arguments="{patient : patient}">Ajouter Consultation</f:link.action>
+			</div>
+			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th scope="col">Numéro</th>
+						<th scope="col">Date</th>
+						<th scope="col">Montant</th>
+						<th scope="col">Type</th>
+						<th scope="col">Notes</th>
+					</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+				<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="" arguments="{patient : patient}">Imprimer Facture</f:link.action>
+			</div>
+		</div>
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="list">Retour à la liste</f:link.action>
+	</div>
+	<div class="col-md-6">
+		<f:form.submit additionalAttributes="{class:'btn btn-primary'}" value="Enregistrer"/>
+	</div>
+</div>
+</html>

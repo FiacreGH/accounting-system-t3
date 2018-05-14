@@ -1,0 +1,173 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div class="row">
+	<div class="col-md-4">
+		<div>
+			<div id="accordion">
+				<div class="card">
+					<div class="card-header" id="headingOne">
+						<button class="btn btn-link"
+						        data-toggle="collapse"
+						        data-target="#collapseOne"
+						        aria-expanded="false"
+						        aria-controls="collapseOne">
+							<b>{patient.prenoms} {patient.nom}</b>
+						</button>
+					</div>
+
+					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+						<div class="card-body">
+							<div class="form-group row">
+								<label for="prenoms" class="col-sm-4 col-form-label">
+									Lieu
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" property="prenoms"/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="datenaissance" class="col-sm-4 col-form-label">Date</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" type="date" property="datenaissance"/>
+								</div>
+							</div>
+							<div class="form-group row">
+								<label for="commentaires" class="col-sm-4 col-form-label">
+									Note
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.textarea additionalAttributes="{class:'form-control'}"  rows="20" property="commentaires"/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-8">
+		<ul class="nav nav-tabs" id="myTab" role="tablist">
+			<li class="nav-item active">
+				<a class="nav-link"
+				   id="soin-tab"
+				   data-toggle="tab"
+				   href="#soin"
+				   role="tab"
+				   aria-controls="soin"
+				   aria-expanded="true">Soins
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link"
+				   id="prescription-tab"
+				   data-toggle="tab"
+				   href="#prescription"
+				   role="tab"
+				   aria-controls="prescription"
+				   aria-selected="false">Prescription
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link"
+				   id="facturation-tab"
+				   data-toggle="tab"
+				   href="#facturation"
+				   role="tab"
+				   aria-controls="facturation"
+				   aria-selected="false">Facturation
+				</a>
+			</li>
+		</ul>
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade active in" id="soin" role="tabpanel" aria-labelledby="soin-tab">
+					<div class="form-group row">
+						<label class="col-sm-2 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.commentaires"/>
+						</label>
+						<div class="col-sm-10">
+							<textarea name=""
+							          id=""
+							          rows="10"
+							          class="form-control">{patient.commentaires}</textarea>
+						</div>
+					</div>
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th scope="col">Date</th>
+						<th scope="col">Prestation</th>
+						<th scope="col">Prix</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th scope="row">27.03.218</th>
+						<td><f:form.select name="paymentOptions" options="{'1052 réfléxologie plantaire thérapeutique': '1052 réfléxologie plantaire thérapeutique', '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222': '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222' }" /></td>
+						<td>CHF-28</td>
+					</tr>
+					<tr>
+						<th scope="row">3.04.2018</th>
+						<td><f:form.select name="paymentOptions" options="{'30min a 60.frs 6 points à 10': '30min a 60.frs 6 points à 10', '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222': '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222' }" /></td>
+
+						<td>CHF-90</td>
+					</tr>
+					</tbody>
+				</table>
+				<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="list">Ajouter Prestation</f:link.action>
+
+			</div>
+			<div class="tab-pane fade" id="prescription" role="tabpanel" aria-labelledby="prescription-tab">
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th scope="col">Date</th>
+						<th scope="col">Lieu</th>
+						<th scope="col">Prestation</th>
+						<th scope="col">Notes</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr>
+						<th scope="row">27.03.218</th>
+						<td>Torgon</td>
+						<td>1</td>
+						<td>Amélioration</td>
+					</tr>
+					<tr>
+						<th scope="row">3.04.2018</th>
+						<td>Torgon</td>
+						<td>2</td>
+						<td>Bonne ammélioration</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="tab-pane fade" id="facturation" role="tabpanel" aria-labelledby="facturation-tab">
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th scope="col">Numéro</th>
+						<th scope="col">Date</th>
+						<th scope="col">Montant</th>
+						<th scope="col">Type</th>
+						<th scope="col">Notes</th>
+					</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-6">
+		<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="list">Retour à la liste</f:link.action>
+	</div>
+	<div class="col-md-6">
+		<f:form.submit additionalAttributes="{class:'btn btn-primary'}" value="Enregistrer"/>
+	</div>
+</div>
+
+</html>
