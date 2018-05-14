@@ -71,6 +71,15 @@ class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     {
 
     }
+    /**
+     * action newConsultation
+     *
+     * @return void
+     */
+    public function newConsultationAction()
+    {
+
+    }
 
     /**
      * action create
