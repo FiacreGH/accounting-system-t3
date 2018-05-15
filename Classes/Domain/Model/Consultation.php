@@ -18,12 +18,12 @@ namespace CodeID\AccountingSystem\Domain\Model;
 class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
-     * facture
+     * invoice
      *
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Facture>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Invoice>
      * @cascade remove
      */
-    protected $facture = null;
+    protected $invoice = null;
 
     /**
      * __construct
@@ -44,49 +44,49 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects()
     {
-        $this->facture = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->invoice = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
-     * Adds a Facture
+     * Adds a Invoice
      *
-     * @param \CodeID\AccountingSystem\Domain\Model\Facture $facture
+     * @param \CodeID\AccountingSystem\Domain\Model\Invoice $invoice
      * @return void
      */
-    public function addFacture(\CodeID\AccountingSystem\Domain\Model\Facture $facture)
+    public function addInvoice(\CodeID\AccountingSystem\Domain\Model\Invoice $invoice)
     {
-        $this->facture->attach($facture);
+        $this->invoice->attach($invoice);
     }
 
     /**
-     * Removes a Facture
+     * Removes a Invoice
      *
-     * @param \CodeID\AccountingSystem\Domain\Model\Facture $factureToRemove The Facture to be removed
+     * @param \CodeID\AccountingSystem\Domain\Model\Invoice $invoiceToRemove The Invoice to be removed
      * @return void
      */
-    public function removeFacture(\CodeID\AccountingSystem\Domain\Model\Facture $factureToRemove)
+    public function removeInvoice(\CodeID\AccountingSystem\Domain\Model\Invoice $invoiceToRemove)
     {
-        $this->facture->detach($factureToRemove);
+        $this->invoice->detach($invoiceToRemove);
     }
 
     /**
-     * Returns the facture
+     * Returns the invoice
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Facture> $facture
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Invoice> $invoice
      */
-    public function getFacture()
+    public function getInvoice()
     {
-        return $this->facture;
+        return $this->invoice;
     }
 
     /**
-     * Sets the facture
+     * Sets the invoice
      *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Facture> $facture
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Invoice> $invoice
      * @return void
      */
-    public function setFacture(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $facture)
+    public function setInvoice(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $invoice)
     {
-        $this->facture = $facture;
+        $this->invoice = $invoice;
     }
 }

@@ -233,7 +233,7 @@
                             "lazyLoading": false,
                             "propertyIsExcludeField": true,
                             "relationDescription": "",
-                            "relationName": "facture",
+                            "relationName": "invoice",
                             "relationType": "zeroToMany",
                             "relationWire": "[wired]",
                             "renderType": "inline",
@@ -260,7 +260,7 @@
                     "_default4_delete": false,
                     "customActions": []
                 },
-                "name": "Facture",
+                "name": "Invoice",
                 "objectsettings": {
                     "addDeletedField": true,
                     "addHiddenField": true,

@@ -15,6 +15,6 @@ namespace CodeID\AccountingSystem\Domain\Model;
 /**
  * Facture
  */
-class Facture extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class Invoice extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     }

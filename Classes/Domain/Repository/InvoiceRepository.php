@@ -13,8 +13,8 @@ namespace CodeID\AccountingSystem\Domain\Repository;
  ***/
 
 /**
- * The repository for Factures
+ * The repository for Invoces
  */
-class FactureRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class InvoiceRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
     }
