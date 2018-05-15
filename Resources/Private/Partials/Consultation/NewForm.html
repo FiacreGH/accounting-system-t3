@@ -99,6 +99,7 @@
 						<th scope="col">Date</th>
 						<th scope="col">Prestation</th>
 						<th scope="col">Prix</th>
+						<th scope="col">Actions</th>
 					</tr>
 					</thead>
 					<tbody>
@@ -106,12 +107,37 @@
 						<th scope="row">27.03.218</th>
 						<td><f:form.select name="paymentOptions" options="{'1052 réfléxologie plantaire thérapeutique': '1052 réfléxologie plantaire thérapeutique', '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222': '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222' }" /></td>
 						<td>CHF-28</td>
+						<td>
+							<f:link.action action="edit" arguments="{consultation : consultation}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
+							&nbsp; &nbsp; &nbsp;
+							<f:link.action action="delete"  arguments="{consultation : consultation}"><span class="glyphicon glyphicon-trash" onclick="function deleteItem(event)
+					{
+					if (confirm('Êtes-vous suûr de vouloir supprimer cette consultation?')){
+					}
+					else{
+						event.preventDefault();
+					}
+						return false;
+						}; deleteItem(event);"></span></f:link.action>
+						</td>
 					</tr>
 					<tr>
 						<th scope="row">3.04.2018</th>
 						<td><f:form.select name="paymentOptions" options="{'30min a 60.frs 6 points à 10': '30min a 60.frs 6 points à 10', '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222': '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222' }" /></td>
-
 						<td>CHF-90</td>
+						<td>
+							<f:link.action action="edit" arguments="{consultation : consultation}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
+							&nbsp; &nbsp; &nbsp;
+							<f:link.action action="delete"  arguments="{consultation : consultation}"><span class="glyphicon glyphicon-trash" onclick="function deleteItem(event)
+					{
+					if (confirm('Êtes-vous suûr de vouloir supprimer cette consultation?')){
+					}
+					else{
+						event.preventDefault();
+					}
+						return false;
+						}; deleteItem(event);"></span></f:link.action>
+						</td>
 					</tr>
 					</tbody>
 				</table>
