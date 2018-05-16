@@ -15,6 +15,15 @@
 			<trans-unit id="tx_accountingsystem_domain_model_patient.adresse">
 				<source>Adresse</source>
 			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.rue">
+				<source>Rue</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.codepostal">
+				<source>Cde Postal</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.ville">
+				<source>Ville</source>
+			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.telephoneportable">
 				<source>Telephoneportable</source>
 			</trans-unit>

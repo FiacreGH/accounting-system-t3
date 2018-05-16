@@ -37,6 +37,24 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var string
      */
     protected $adresse = '';
+    /**
+     * telephoneportable
+     *
+     * @var string
+     */
+    protected $rue = '';
+    /**
+     * telephoneportable
+     *
+     * @var string
+     */
+    protected $codepostal = '';
+    /**
+     * telephoneportable
+     *
+     * @var string
+     */
+    protected $ville = '';
 
     /**
      * telephoneportable
@@ -206,6 +224,69 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setAdresse($adresse)
     {
         $this->adresse = $adresse;
+    }
+
+    /**
+     * Returns the rue
+     *
+     * @return string $rue
+     */
+    public function getRue()
+    {
+        return $this->rue;
+    }
+
+    /**
+     * Sets the rue
+     *
+     * @param string $rue
+     * @return void
+     */
+    public function setRue($rue)
+    {
+        $this->rue = $rue;
+    }
+
+    /**
+     * Returns the codepostal
+     *
+     * @return string $codepostal
+     */
+    public function getCodepostal()
+    {
+        return $this->codepostal;
+    }
+
+    /**
+     * Sets the codepostal
+     *
+     * @param string $codepostal
+     * @return void
+     */
+    public function setCodepostal($codepostal)
+    {
+        $this->codepostal = $codepostal;
+    }
+
+    /**
+     * Returns the ville
+     *
+     * @return string $ville
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * Sets the ville
+     *
+     * @param string $ville
+     * @return void
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
     }
 
     /**
