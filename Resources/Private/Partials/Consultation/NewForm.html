@@ -19,9 +19,16 @@
 						<div class="card-body">
 							<input hidden value="{patient.uid}">
 							<div class="form-group row">
-								<label for="datenaissance" class="col-sm-4 col-form-label">Date</label>
+								<label for="dateconsultation" class="col-sm-4 col-form-label">Date</label>
 								<div class="input-group col-sm-8">
 									<f:form.textfield additionalAttributes="{class:'form-control'}" type="date" property="datenaissance"/>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label for="lieuconsultation" class="col-sm-4 col-form-label">Lieu</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" property="datenaissance"/>
 								</div>
 							</div>
 
@@ -37,7 +44,7 @@
 									Note
 								</label>
 								<div class="input-group col-sm-8">
-									<f:form.textarea additionalAttributes="{class:'form-control'}"  rows="20" property="commentaires"/>
+									<f:form.textarea additionalAttributes="{class:'form-control'}"  rows="17" property="commentaires"/>
 								</div>
 							</div>
 						</div>
@@ -73,14 +80,14 @@
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade active in" id="soin" role="tabpanel" aria-labelledby="soin-tab">
-				<div class="form-group row">
+				<div class="form-group row" style="padding-top: 14px">
 					<label class="col-sm-2 col-form-label">
 						<f:translate key="tx_accountingsystem_domain_model_patient.commentaires"/>
 					</label>
 					<div class="col-sm-10">
 							<textarea name=""
 							          id=""
-							          rows="7"
+							          rows="6"
 							          class="form-control">{patient.commentaires}</textarea>
 					</div>
 				</div>
