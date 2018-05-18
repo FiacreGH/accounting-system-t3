@@ -67,6 +67,11 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
      *
      * @return void
      */
+    public function newAction()
+    {
+
+    }
+    
     public function newConsultationAction()
     {
 

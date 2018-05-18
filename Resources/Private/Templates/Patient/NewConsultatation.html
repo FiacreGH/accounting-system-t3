@@ -19,7 +19,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 	<f:render partial="FormErrors" arguments="{object:Consultation}"/>
 
-	<f:form action="create" name="newConsultation" object="{newConsultation}">
+	<f:form action="create" controller="ConsultationController" name="newConsultation" object="{newConsultation}">
 		<f:render partial="Consultation/NewForm"/>
 	</f:form>
 </f:section>
