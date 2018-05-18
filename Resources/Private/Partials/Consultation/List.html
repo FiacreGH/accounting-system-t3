@@ -56,15 +56,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 				<td>
 					<f:link.action action="edit" arguments="{patient : patient}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
 					&nbsp; &nbsp; &nbsp;
-					<f:link.action action="delete"  arguments="{patient : patient}"><span class="glyphicon glyphicon-trash" onclick="function deleteItem(event)
-					{
-					if (confirm('Êtes-vous suûr de vouloir supprimer ce patient?')){
-					}
-					else{
-						event.preventDefault();
-					}
-						return false;
-						}; deleteItem(event);"></span></f:link.action>
+					<f:link.action action="delete"  arguments="{patient : patient}"><span class="delete-confirm glyphicon glyphicon-trash"></span></f:link.action>
 				</td>
 			</tr>
 		</f:for>
