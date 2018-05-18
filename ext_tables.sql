@@ -57,6 +57,17 @@ CREATE TABLE tx_accountingsystem_domain_model_consultation (
 
 	patient int(11) unsigned DEFAULT '0' NOT NULL,
 
+	date varchar(255) DEFAULT '' NOT NULL,
+	place varchar(255) DEFAULT '' NOT NULL,
+	note varchar(255) DEFAULT '' NOT NULL,
+	comment varchar(255) DEFAULT '' NOT NULL,
+	tarif varchar(255) DEFAULT '' NOT NULL,
+	codetarif varchar(255) DEFAULT '' NOT NULL,
+	quantity varchar(255) DEFAULT '' NOT NULL,
+	price varchar(255) DEFAULT '' NOT NULL,
+	pointvalue varchar(255) DEFAULT '' NOT NULL,
+	tva varchar(255) DEFAULT '' NOT NULL,
+	amount varchar(255) DEFAULT '' NOT NULL,
 	invoice int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,

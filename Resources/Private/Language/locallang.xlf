@@ -63,6 +63,9 @@
 			<trans-unit id="tx_accountingsystem_domain_model_consultation.consultationdate">
 				<source>Date</source>
 			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.comment">
+				<source>Commentaires</source>
+			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_consultation.amount">
 				<source>Montant</source>
 			</trans-unit>

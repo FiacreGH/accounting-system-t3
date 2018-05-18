@@ -63,10 +63,10 @@
 			<trans-unit id="tx_accountingsystem_domain_model_consultation">
 				<source>Consultation</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_consultation.invoce">
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.invoice">
 				<source>Facture</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_invoce">
+			<trans-unit id="tx_accountingsystem_domain_model_invoice">
 				<source>Facture</source>
 			</trans-unit>
 		</body>

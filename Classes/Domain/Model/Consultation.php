@@ -17,6 +17,88 @@ namespace CodeID\AccountingSystem\Domain\Model;
  */
 class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
+
+    /**
+     * Patient Id
+     *
+     * @var string
+     */
+    protected $patient = '';
+
+    /**
+     * Consultation Date
+     *
+     * @var string
+     */
+    protected $date = '';
+
+    /**
+     * Consultation Place
+     *
+     * @var string
+     */
+    protected $place = '';
+
+    /**
+     * Notes
+     *
+     * @var string
+     */
+    protected $note = '';
+    /**
+     * Comment
+     *
+     * @var string
+     */
+    protected $comment = '';
+    /**
+     * Tarif
+     *
+     * @var string
+     */
+    protected $tarif = '';
+    /**
+     * Tarif Code
+     *
+     * @var string
+     */
+    protected $codetarif = '';
+
+    /**
+     * Quantity
+     *
+     * @var string
+     */
+    protected $quantity = '';
+
+    /**
+     * Price
+     *
+     * @var string
+     */
+    protected $price = '';
+
+    /**
+     * Point Value
+     *
+     * @var string
+     */
+    protected $pointvalue = '';
+
+    /**
+     * Tva
+     *
+     * @var string
+     */
+    protected $tva = '';
+
+    /**
+     * Amount
+     *
+     * @var string
+     */
+    protected $amount = '';
+
     /**
      * invoice
      *
@@ -47,6 +129,228 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->invoice = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
+
+    /**
+     * Returns the date
+     *
+     * @return string $date
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Sets the date
+     *
+     * @param string $date
+     * @return void
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    }
+
+    /**
+     * Returns the place
+     *
+     * @return string $place
+     */
+    public function getPlace()
+    {
+        return $this->place;
+    }
+
+    /**
+     * Sets the place
+     *
+     * @param string $place
+     * @return void
+     */
+    public function setPlace($place)
+    {
+        $this->place = $place;
+    }
+    /**
+     * Returns the note
+     *
+     * @return string $note
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * Sets the note
+     *
+     * @param string $note
+     * @return void
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+    }
+    /**
+     * Returns the comment
+     *
+     * @return string $comment
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * Sets the comment
+     *
+     * @param string $comment
+     * @return void
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    }
+    /**
+     * Returns the tarif
+     *
+     * @return string $tarif
+     */
+    public function getTarif()
+    {
+        return $this->tarif;
+    }
+
+    /**
+     * Sets the tarif
+     *
+     * @param string $tarif
+     * @return void
+     */
+    public function setTarif($tarif)
+    {
+        $this->tarif = $tarif;
+    }
+    /**
+     * Returns the codetarif
+     *
+     * @return string $codetarif
+     */
+    public function getCodetarif()
+    {
+        return $this->codetarif;
+    }
+
+    /**
+     * Sets the codetarif
+     *
+     * @param string $codetarif
+     * @return void
+     */
+    public function setCodetarif($codetarif)
+    {
+        $this->codetarif = $codetarif;
+    }
+    /**
+     * Returns the quantity
+     *
+     * @return string $quantity
+     */
+    public function getQuantity()
+    {
+        return $this->quantity;
+    }
+
+    /**
+     * Sets the quantity
+     *
+     * @param string $quantity
+     * @return void
+     */
+    public function setQuantity($quantity)
+    {
+        $this->quantity = $quantity;
+    }
+    /**
+     * Returns the price
+     *
+     * @return string $price
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Sets the price
+     *
+     * @param string $price
+     * @return void
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+    /**
+     * Returns the pointvalue
+     *
+     * @return string $pointvalue
+     */
+    public function getPointvalue()
+    {
+        return $this->pointvalue;
+    }
+
+    /**
+     * Sets the pointvalue
+     *
+     * @param string $pointvalue
+     * @return void
+     */
+    public function setPointvalue($pointvalue)
+    {
+        $this->pointvalue = $pointvalue;
+    }
+    /**
+     * Returns the tva
+     *
+     * @return string $tva
+     */
+    public function getTva()
+    {
+        return $this->tva;
+    }
+
+    /**
+     * Sets the tva
+     *
+     * @param string $tva
+     * @return void
+     */
+    public function setTva($tva)
+    {
+        $this->tva = $tva;
+    }
+    /**
+     * Returns the amount
+     *
+     * @return string $amount
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * Sets the amount
+     *
+     * @param string $amount
+     * @return void
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+    }
     /**
      * Adds a Invoice
      *
