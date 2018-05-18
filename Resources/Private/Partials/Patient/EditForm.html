@@ -124,7 +124,8 @@
 				   href="#info"
 				   role="tab"
 				   aria-controls="info"
-				   aria-expanded="true">Informations
+				   aria-expanded="true">
+					<f:translate key="tx_accountingsystem_domain_model_patient.info"/>
 				</a>
 			</li>
 			<li class="nav-item">
@@ -134,7 +135,8 @@
 				   href="#consultation"
 				   role="tab"
 				   aria-controls="consultation"
-				   aria-selected="false">Consultations
+				   aria-selected="false">
+					<f:translate key="tx_accountingsystem_domain_model_patient.consultation"/>
 				</a>
 			</li>
 			<li class="nav-item">
@@ -144,7 +146,8 @@
 				   href="#invoice"
 				   role="tab"
 				   aria-controls="invoice"
-				   aria-selected="false">Factures
+				   aria-selected="false">
+					<f:translate key="tx_accountingsystem_domain_model_patient.invoice"/>
 				</a>
 			</li>
 		</ul>
@@ -205,28 +208,28 @@
 					<thead>
 					<tr>
 						<th>
-							Date
+							<f:translate key="tx_accountingsystem_domain_model_consultation.consultationdate"/>
 						</th>
 						<th>
-							Lieu
+							<f:translate key="tx_accountingsystem_domain_model_consultation.place"/>
 						</th>
 						<th>
-							Motif
+							<f:translate key="tx_accountingsystem_domain_model_consultation.reason"/>
 						</th>
 						<th>
-							Code Tarifaire
+							<f:translate key="tx_accountingsystem_domain_model_consultation.ctarif"/>
 						</th>
 						<th>
-							Quantité
+							<f:translate key="tx_accountingsystem_domain_model_consultation.quantity"/>
 						</th>
 						<th>
-							Prix
+							<f:translate key="tx_accountingsystem_domain_model_consultation.price"/>
 						</th>
 						<th>
-							Montant
+							<f:translate key="tx_accountingsystem_domain_model_consultation.amount"/>
 						</th>
 						<th>
-							Action
+							<f:translate key="tx_accountingsystem_domain_model_consultation.action"/>
 						</th>
 					</tr>
 					</thead>
@@ -257,38 +260,44 @@
 							<td>
 								<f:link.action action="edit" arguments="{patient : patient}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
 								&nbsp; &nbsp; &nbsp;
-								<f:link.action action="delete"  arguments="{patient : patient}"><span class="glyphicon glyphicon-trash" onclick="function deleteItem(event)
-					{
-					if (confirm('Êtes-vous suûr de vouloir supprimer ce patient?')){
-					}
-					else{
-						event.preventDefault();
-					}
-						return false;
-						}; deleteItem(event);"></span></f:link.action>
+								<f:link.action action="delete"  arguments="{patient : patient}"><span class="delete-confirm glyphicon glyphicon-trash"></span></f:link.action>
 							</td>
 						</tr>
 					</f:for>
 					</tbody>
 				</table>
 
-				<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="newConsultation" arguments="{consultation : consultation}">Ajouter Consultation</f:link.action>
+				<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="newConsultation" arguments="{consultation : consultation}">
+					<f:translate key="tx_accountingsystem_domain_model_consultation.add"/>
+				</f:link.action>
 			</div>
 			<div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="invoice-tab">
 				<table class="table table-striped">
 					<thead>
 					<tr>
-						<th scope="col">Numéro</th>
-						<th scope="col">Date</th>
-						<th scope="col">Montant</th>
-						<th scope="col">Type</th>
-						<th scope="col">Notes</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.idpatient"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.consultationdate"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.amount"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.type"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.notice"/>
+						</th>
 					</tr>
 					</thead>
 					<tbody>
 					</tbody>
 				</table>
-				<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="" arguments="{patient : patient}">Imprimer Facture</f:link.action>
+				<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="" arguments="{patient : patient}">
+					<f:translate key="tx_accountingsystem_domain_model_invoice.printbill"/>
+				</f:link.action>
 			</div>
 		</div>
 	</div>
@@ -296,7 +305,9 @@
 </div>
 <div class="row">
 	<div class="col-md-6">
-		<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="list">Retour à la liste</f:link.action>
+		<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="list">
+			<f:translate key="tx_accountingsystem_domain_model_patient.backtolist"/>
+		</f:link.action>
 	</div>
 	<div class="col-md-6">
 		<f:form.submit additionalAttributes="{class:'btn btn-primary'}" value="Enregistrer"/>

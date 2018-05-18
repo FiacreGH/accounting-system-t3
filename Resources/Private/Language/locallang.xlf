@@ -24,6 +24,78 @@
 			<trans-unit id="tx_accountingsystem_domain_model_patient.ville">
 				<source>Ville</source>
 			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.info">
+				<source>Informations</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.consultation">
+				<source>Consultations</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.invoice">
+				<source>Factures</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.place">
+				<source>Lieu</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.reason">
+				<source>Motif</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.ctarif">
+				<source>Code Tarifaire</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.ctarifshort">
+				<source>C.Tarifaire</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.tarif">
+				<source>Tarif</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.quantity">
+				<source>Quantité</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.price">
+				<source>Prix</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.action">
+				<source>Action</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.idpatient">
+				<source>Id Patient</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.consultationdate">
+				<source>Date</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.amount">
+				<source>Montant</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.ptvalue">
+				<source>V.Point</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.tva">
+				<source>TVA</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.care">
+				<source>Soins</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.billing">
+				<source>Facturations</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.type">
+				<source>Type</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.notice">
+				<source>Notes</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.add">
+				<source>Ajouter Consultation</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.add">
+				<source>Ajouter Patient</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_invoice.printbill">
+				<source>Imprimer Facture</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.backtolist">
+				<source>Retour à la liste</source>
+			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.telephoneportable">
 				<source>Portable</source>
 			</trans-unit>
@@ -56,18 +128,6 @@
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.divers">
 				<source>Divers</source>
-			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.consultation">
-				<source>Consultation</source>
-			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_consultation">
-				<source>Consultation</source>
-			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_consultation.invoce">
-				<source>Facture</source>
-			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_invoce">
-				<source>Facture</source>
 			</trans-unit>
 		</body>
 	</file>
