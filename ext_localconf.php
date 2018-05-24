@@ -20,13 +20,12 @@ call_user_func(
             'CodeID.AccountingSystem',
             'Accountingsystem',
             [
-                'Patient' => 'list, show, new,newConsultation, create, edit, update, delete',
-                'Consultation => list, newConsultation'
+                'Patient' => 'list, show, new, create, edit, update, delete',
+                'Consultation' => 'list, new, create, newConsultation'
             ],
-            // Theses actions are not cached!!!
             [
-                'Patient' => 'list, show, new, newConsultation, create, edit, update, delete',
-                'Consultation => list, newConsultation'
+                'Patient' => 'list, show, new, create, edit, update, delete',
+                'Consultation' => 'list, new, create, newConsultation'
             ]
         );
 

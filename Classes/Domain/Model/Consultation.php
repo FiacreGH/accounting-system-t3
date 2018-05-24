@@ -40,6 +40,13 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $place = '';
 
     /**
+     * Consultation Reason
+     *
+     * @var string
+     */
+    protected $reason = '';
+
+    /**
      * Notes
      *
      * @var string
@@ -170,6 +177,27 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setPlace($place)
     {
         $this->place = $place;
+    }
+
+    /**
+     * Returns the reason
+     *
+     * @return string $reason
+     */
+    public function getReason()
+    {
+        return $this->reason;
+    }
+
+    /**
+     * Sets the reason
+     *
+     * @param string $reason
+     * @return void
+     */
+    public function setReason($reason)
+    {
+        $this->reason = $reason;
     }
     /**
      * Returns the note

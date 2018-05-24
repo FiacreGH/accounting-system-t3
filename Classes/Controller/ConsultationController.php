@@ -71,11 +71,6 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     {
 
     }
-    
-    public function newConsultationAction()
-    {
-
-    }
 
     /**
      * action create
@@ -86,7 +81,7 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     public function createAction(\CodeID\AccountingSystem\Domain\Model\Consultation $newConsultation)
     {
         $this->consultationRepository->add($newConsultation);
-        $this->redirect('list');
+        $this->redirect('list', 'Patient');
     }
 
     /**

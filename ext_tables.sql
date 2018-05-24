@@ -59,6 +59,7 @@ CREATE TABLE tx_accountingsystem_domain_model_consultation (
 
 	date varchar(255) DEFAULT '' NOT NULL,
 	place varchar(255) DEFAULT '' NOT NULL,
+	reason varchar(255) DEFAULT '' NOT NULL,
 	note varchar(255) DEFAULT '' NOT NULL,
 	comment varchar(255) DEFAULT '' NOT NULL,
 	tarif varchar(255) DEFAULT '' NOT NULL,

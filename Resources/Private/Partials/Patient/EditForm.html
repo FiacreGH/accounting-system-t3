@@ -1,5 +1,7 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
+<f:debug title="all">{patient.consultation}</f:debug>
+
 <div class="row">
 	<div class="col-md-4">
 		<div>
@@ -234,7 +236,7 @@
 					</tr>
 					</thead>
 					<tbody>
-					<f:for each="{consultations}" as="consultation">
+					<f:for each="{patient.consultations}" as="patient.consultation">
 						<tr>
 							<td>
 								{consultation.date}
@@ -243,31 +245,31 @@
 								{consultation.lieu}
 							</td>
 							<td>
-								{consultation.motif}
+								{consultation.reason}
 							</td>
 							<td>
-								{consultation.codetarifaire}
+								{consultation.codetarif}
 							</td>
 							<td>
-								{consultation.date}
+								{consultation.quantity}
 							</td>
 							<td>
-								{consultation.date}
+								{consultation.price}
 							</td>
 							<td>
-								{consultation.date}
+								{consultation.amount}
 							</td>
 							<td>
-								<f:link.action action="edit" arguments="{patient : patient}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
+								<f:link.action action="edit" controller="Consultation" arguments="{consultation : consultation}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
 								&nbsp; &nbsp; &nbsp;
-								<f:link.action action="delete"  arguments="{patient : patient}"><span class="delete-confirm glyphicon glyphicon-trash"></span></f:link.action>
+								<f:link.action action="delete"  controller="Consultation" arguments="{consultation : consultation}"><span class="delete-confirm glyphicon glyphicon-trash"></span></f:link.action>
 							</td>
 						</tr>
 					</f:for>
 					</tbody>
 				</table>
 
-				<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="newConsultation" arguments="{consultation : consultation}">
+				<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="new" controller="Consultation" name="newConsultation">
 					<f:translate key="tx_accountingsystem_domain_model_consultation.add"/>
 				</f:link.action>
 			</div>

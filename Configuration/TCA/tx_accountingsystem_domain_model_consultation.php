@@ -2,7 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_consultation',
-        'label' => 'invoice',
+        'label' => 'date',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -17,10 +17,10 @@ return [
         'iconfile' => 'EXT:accounting_system/Resources/Public/Icons/tx_accountingsystem_domain_model_consultation.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, date, place, note, comment, tarif, codetarif, quantity, price, pointvalue, tva, amount, invoice',
+        'showRecordFieldList' => 'hidden, date, place, reason, note, comment, tarif, codetarif, quantity, price, pointvalue, tva, amount, invoice',
     ],
     'types' => [
-        '1' => ['showitem' => 'hidden, date, place, note, comment, tarif, codetarif, quantity, price, pointvalue, tva, amount, invoice, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'hidden, date, place, reason, note, comment, tarif, codetarif, quantity, price, pointvalue, tva, amount, invoice, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'hidden' => [
@@ -73,6 +73,16 @@ return [
         'place' => [
             'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.place',
+            'config' => [
+                'type' => 'input',
+                'size' => 150,
+                'eval' => 'trim'
+            ],
+        ],
+
+        'reason' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.reason',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
