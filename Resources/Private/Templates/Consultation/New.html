@@ -9,7 +9,7 @@
 	<f:render partial="FormErrors" arguments="{object:Consultation}"/>
 
 	<f:form action="create" name="newConsultation" object="{newConsultation}">
-		<f:render partial="Consultation/NewForm"/>
+		<f:render arguments="{_all}" partial="Consultation/NewForm"/>
 	</f:form>
 </f:section>
 </html>

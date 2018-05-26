@@ -19,22 +19,17 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
 
     /**
-     * Patient Id
-     *
-     * @var string
+     * @var \CodeID\AccountingSystem\Domain\Model\Patient
      */
     protected $patient = '';
 
     /**
-     * Consultation Date
-     *
+     * \DateTime
      * @var string
      */
     protected $date = '';
 
     /**
-     * Consultation Place
-     *
      * @var string
      */
     protected $place = '';
@@ -417,8 +412,29 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Invoice> $invoice
      * @return void
      */
-    public function setInvoice(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $invoice)
+    public function setInvoice(\CodeID\AccountingSystem\Domain\Model\Invoice $invoice)
     {
         $this->invoice = $invoice;
+    }
+
+    /**
+     * Returns the patient
+     *
+     * @return \CodeID\AccountingSystem\Domain\Model\Patient $patient
+     */
+    public function getPatient()
+    {
+        return $this->patient;
+    }
+
+    /**
+     * Sets the patient
+     *
+     * @param \CodeID\AccountingSystem\Domain\Model\Patient $patient
+     * @return void
+     */
+    public function setPatient(\CodeID\AccountingSystem\Domain\Model\Patient $patient)
+    {
+        $this->patient = $patient;
     }
 }

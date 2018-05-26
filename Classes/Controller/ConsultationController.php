@@ -63,13 +63,12 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     }
 
     /**
-     * action newConsultation
-     *
+     * @param \CodeID\AccountingSystem\Domain\Model\Patient $patient
      * @return void
      */
-    public function newAction()
+    public function newAction(\CodeID\AccountingSystem\Domain\Model\Patient $patient)
     {
-
+        $this->view->assign('patient', $patient);
     }
 
     /**
@@ -105,7 +104,7 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     public function updateAction(\CodeID\AccountingSystem\Domain\Model\Consultation $consultation)
     {
         $this->consultationRepository->update($consultation);
-        $this->redirect('list');
+        $this->redirect('list','Patient');
     }
 
     /**
@@ -117,7 +116,8 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     public function deleteAction(\CodeID\AccountingSystem\Domain\Model\Consultation $consultation)
     {
         $this->consultationRepository->remove($consultation);
-        $this->redirect('list');
+        $this->redirect('list','Patient');
+        // $this->redirect('list','Patient','AccountingSystem','{patient : patient}'); // @todo this line is to be correct
     }
 
     /**

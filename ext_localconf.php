@@ -21,11 +21,11 @@ call_user_func(
             'Accountingsystem',
             [
                 'Patient' => 'list, show, new, create, edit, update, delete',
-                'Consultation' => 'list, new, create, newConsultation'
+                'Consultation' => 'list, new, create, update, edit, delete'
             ],
             [
                 'Patient' => 'list, show, new, create, edit, update, delete',
-                'Consultation' => 'list, new, create, newConsultation'
+                'Consultation' => 'list, new, create, update, edit, delete'
             ]
         );
 

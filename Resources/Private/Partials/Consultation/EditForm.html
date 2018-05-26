@@ -1,4 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:debug title="all">{_all}</f:debug>
 
 <div class="row">
 	<div class="col-md-4">
@@ -14,23 +15,42 @@
 							<b>{patient.prenoms} {patient.nom}</b>
 						</button>
 					</div>
-
 					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 						<div class="card-body">
-							<input hidden value="{patient.uid}">
-
+							<f:form.hidden property="patient" value="{patient.uid}"/>
 							<div class="form-group row">
-								<label for="datenaissance" class="col-sm-4 col-form-label">Date</label>
-								<div class="input-group col-sm-8">
-									<f:form.textfield additionalAttributes="{class:'form-control'}" type="date" property="datenaissance"/>
-								</div>
-							</div>
-							<div class="form-group row">
-								<label for="commentaires" class="col-sm-4 col-form-label">
-									Note
+								<label for="dateconsultation" class="col-sm-4 col-form-label">
+									<f:translate key="tx_accountingsystem_domain_model_consultation.consultationdate"/>
 								</label>
 								<div class="input-group col-sm-8">
-									<f:form.textarea additionalAttributes="{class:'form-control'}"  rows="20" property="commentaires"/>
+									<f:form.textfield additionalAttributes="{class:'form-control'}" type="date" property="date"/>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label for="lieuconsultation" class="col-sm-4 col-form-label">
+									<f:translate key="tx_accountingsystem_domain_model_consultation.place"/>
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.textfield additionalAttributes="{class:'form-control'}" property="place"/>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label for="motif" class="col-sm-4 col-form-label">
+									<f:translate key="tx_accountingsystem_domain_model_consultation.reason"/>
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.select name="motifOption" additionalAttributes="{class:'select2 form-control'}" options="{'Maladie':'Maladie', 'Accident': 'Accident' }" property="reason"/>
+								</div>
+							</div>
+
+							<div class="form-group row">
+								<label for="commentaires" class="col-sm-4 col-form-label">
+									<f:translate key="tx_accountingsystem_domain_model_consultation.notice"/>
+								</label>
+								<div class="input-group col-sm-8">
+									<f:form.textarea additionalAttributes="{class:'form-control'}"  rows="17" property="note"/>
 								</div>
 							</div>
 						</div>
@@ -49,19 +69,11 @@
 				   href="#soin"
 				   role="tab"
 				   aria-controls="soin"
-				   aria-expanded="true">Soins
+				   aria-expanded="true">
+					<f:translate key="tx_accountingsystem_domain_model_consultation.care"/>
 				</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link"
-				   id="prescription-tab"
-				   data-toggle="tab"
-				   href="#prescription"
-				   role="tab"
-				   aria-controls="prescription"
-				   aria-selected="false">Prescription
-				</a>
-			</li>
+
 			<li class="nav-item">
 				<a class="nav-link"
 				   id="facturation-tab"
@@ -69,109 +81,116 @@
 				   href="#facturation"
 				   role="tab"
 				   aria-controls="facturation"
-				   aria-selected="false">Facturation
+				   aria-selected="false">
+					<f:translate key="tx_accountingsystem_domain_model_consultation.billing"/>
 				</a>
 			</li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade active in" id="soin" role="tabpanel" aria-labelledby="soin-tab">
-				<div class="form-group row">
+				<div class="form-group row" style="padding-top: 14px">
 					<label class="col-sm-2 col-form-label">
-						<f:translate key="tx_accountingsystem_domain_model_patient.commentaires"/>
+						<f:translate key="tx_accountingsystem_domain_model_consultation.comment"/>
 					</label>
 					<div class="col-sm-10">
-							<textarea name=""
-							          id=""
-							          rows="10"
-							          class="form-control">{patient.commentaires}</textarea>
+						<f:form.textarea additionalAttributes="{class:'form-control'}"  rows="6" property="comment"/>
 					</div>
 				</div>
-				<table class="table table-striped">
-					<thead>
-					<tr>
-						<th scope="col">Date</th>
-						<th scope="col">Prestation</th>
-						<th scope="col">Prix</th>
-						<th scope="col">Actions</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<th scope="row">27.03.218</th>
-						<td><f:form.select name="paymentOptions" options="{'1052 réfléxologie plantaire thérapeutique': '1052 réfléxologie plantaire thérapeutique', '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222': '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222' }" /></td>
-						<td>CHF-28</td>
-						<td>
-							<f:link.action action="edit" arguments="{consultation : consultation}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
-							&nbsp; &nbsp; &nbsp;
-							<f:link.action action="delete"  arguments="{consultation : consultation}"><span class="glyphicon glyphicon-trash" onclick="function deleteItem(event)
-					{
-					if (confirm('Êtes-vous suûr de vouloir supprimer cette consultation?')){
-					}
-					else{
-						event.preventDefault();
-					}
-						return false;
-						}; deleteItem(event);"></span></f:link.action>
-						</td>
-					</tr>
-					<tr>
-						<th scope="row">3.04.2018</th>
-						<td><f:form.select name="paymentOptions" options="{'30min a 60.frs 6 points à 10': '30min a 60.frs 6 points à 10', '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222': '60min à 90frs 12point a  7.5 / 90 min à 130frs 18 point à 7.222' }" /></td>
-						<td>CHF-90</td>
-						<td>
-							<f:link.action action="edit" arguments="{consultation : consultation}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
-							&nbsp; &nbsp; &nbsp;
-							<f:link.action action="delete"  arguments="{consultation : consultation}"><span class="glyphicon glyphicon-trash" onclick="function deleteItem(event)
-					{
-					if (confirm('Êtes-vous suûr de vouloir supprimer cette consultation?')){
-					}
-					else{
-						event.preventDefault();
-					}
-						return false;
-						}; deleteItem(event);"></span></f:link.action>
-						</td>
-					</tr>
-					</tbody>
-				</table>
-				<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="list">Ajouter Prestation</f:link.action>
 
-			</div>
-			<div class="tab-pane fade" id="prescription" role="tabpanel" aria-labelledby="prescription-tab">
-				<table class="table table-striped">
-					<thead>
-					<tr>
-						<th scope="col">Date</th>
-						<th scope="col">Lieu</th>
-						<th scope="col">Prestation</th>
-						<th scope="col">Notes</th>
-					</tr>
-					</thead>
-					<tbody>
-					<tr>
-						<th scope="row">27.03.218</th>
-						<td>Torgon</td>
-						<td>1</td>
-						<td>Amélioration</td>
-					</tr>
-					<tr>
-						<th scope="row">3.04.2018</th>
-						<td>Torgon</td>
-						<td>2</td>
-						<td>Bonne ammélioration</td>
-					</tr>
-					</tbody>
-				</table>
+				<div class="form-group row">
+					<label for="tarif" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_consultation.tarif"/>
+					</label>
+					<div class=" col-sm-10">
+						<f:form.textfield additionalAttributes="{class:'form-control'}" property="tarif"/>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="codeTarifaire" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_consultation.ctarifshort"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.select name="tafifOption" additionalAttributes="{class:'select2 form-control'}" options="{'1062 massage classique':'1062 massage classique', '1052 réfléxologie plantaire': '1052 réfléxologie plantaire', '1206 Nutrition':'1206 Nutrition' }" property="codetarif"/>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="quantité" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_consultation.quantity"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.select name="qtyOption" additionalAttributes="{class:'select2 form-control'}" options="{'8':'8', '12': '12', 18:'18' }" property="quantity"/>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="prix" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_consultation.price"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.select name="priceOption" additionalAttributes="{class:'select2 form-control'}" options="{'10':'10', '7,5': '7,5', '7,22':'7,22' }" property="price"/>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="vpoint" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_consultation.ptvalue"/>
+					</label>
+					<div class=" col-sm-10">
+						<f:form.textfield additionalAttributes="{class:'form-control'}" property="pointvalue"/>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="tva" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_consultation.tva"/>
+					</label>
+					<div class=" col-sm-10">
+						<f:form.textfield additionalAttributes="{class:'form-control'}" property="tva"/>
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="montant" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_consultation.amount"/>
+					</label>
+					<div class=" col-sm-10">
+						<f:form.textfield additionalAttributes="{class:'form-control'}" property="amount"/>
+					</div>
+				</div>
 			</div>
 			<div class="tab-pane fade" id="facturation" role="tabpanel" aria-labelledby="facturation-tab">
 				<table class="table table-striped">
 					<thead>
 					<tr>
-						<th scope="col">Numéro</th>
-						<th scope="col">Date</th>
-						<th scope="col">Montant</th>
-						<th scope="col">Type</th>
-						<th scope="col">Notes</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.idpatient"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.consultationdate"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.tarif"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.ctarifshort"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.quantity"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.price"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.ptvalue"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.tva"/>
+						</th>
+						<th scope="col">
+							<f:translate key="tx_accountingsystem_domain_model_consultation.amount"/>
+						</th>
 					</tr>
 					</thead>
 					<tbody>
@@ -182,13 +201,16 @@
 	</div>
 </div>
 <div class="row">
-	<div class="col-md-6">
-		<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="list">
-			<f:translate key="tx_accountingsystem_domain_model_patient.backtolist"/>
+	<div class="col-md-4">
+		<f:link.action additionalAttributes="{class:'btnback btn btn-primary'}">
+			Retour
 		</f:link.action>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-4">
 		<f:form.submit additionalAttributes="{class:'btn btn-primary'}" value="Enregistrer"/>
+	</div>
+	<div class="col-md-4">
+		<f:form.submit additionalAttributes="{class:'btn btn-primary'}" value="Générer Facture"/>
 	</div>
 </div>
 
