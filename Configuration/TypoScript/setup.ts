@@ -26,16 +26,24 @@ plugin.tx_accountingsystem {
 page = PAGE
 page{
     includeCSSLibs {
-        cloudflare = https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css
-        cloudflare {
+        dataTables = https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css
+        dataTables {
+            external = 1
+        }
+        select2 = https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css
+        select2 {
             external = 1
         }
         theme = EXT:accounting_system/Resources/Public/Less/Theme/theme.less
     }
 
     includeJSFooterlibs {
-        cloudflare = https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js
-        cloudflare {
+        dataTables = https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js
+        dataTables {
+            external = 1
+        }
+        select2 = https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js
+        select2 {
             external = 1
         }
         default = EXT:accounting_system/Resources/Public/JavaScript/Additionnal/additionnal.js

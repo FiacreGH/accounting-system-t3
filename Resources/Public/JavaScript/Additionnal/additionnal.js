@@ -21,4 +21,16 @@ $(document).ready( function (event) {
 		}
 		return false;
 	});
+	//select2 implementation
+
+	$('.select2').select2({
+		tags : true
+	});
+
+	//history back implementation
+	$(".btnback").click(function(event) {
+		event.preventDefault();
+		history.back(1);
+	});
+
 });
