@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:debug title="all">{patient.consultation.0.date}</f:debug>
+
 <div class="row">
 	<div class="col-md-4">
 		<div>
@@ -126,37 +126,37 @@
 		<ul class="nav nav-tabs" id="myTab" role="tablist">
 			<li class="nav-item active">
 				<a class="nav-link"
-				   id="home-tab"
+				   id="info-tab"
 				   data-toggle="tab"
-				   href="#home"
+				   href="#info"
 				   role="tab"
-				   aria-controls="home"
+				   aria-controls="info"
 				   aria-expanded="true">Informations
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link"
-				   id="profile-tab"
+				   id="consultations-tab"
 				   data-toggle="tab"
-				   href="#profile"
+				   href="#consultations"
 				   role="tab"
-				   aria-controls="profile"
+				   aria-controls="consultations"
 				   aria-selected="false">Consultations
 				</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link"
-				   id="contact-tab"
+				   id="invoice-tab"
 				   data-toggle="tab"
-				   href="#contact"
+				   href="#invoice"
 				   role="tab"
-				   aria-controls="contact"
+				   aria-controls="invoice"
 				   aria-selected="false">Factures
 				</a>
 			</li>
 		</ul>
 		<div class="tab-content" id="myTabContent">
-			<div class="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="home-tab">
+			<div class="tab-pane fade active in" id="info" role="tabpanel" aria-labelledby="info-tab">
 				<form>
 					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">
@@ -212,33 +212,63 @@
 					</div>
 				</form>
 			</div>
-			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-				<table class="table table-striped">
+			<div class="tab-pane fade" id="consultations" role="tabpanel" aria-labelledby="consultations-tab">
+				<table id="asdf" class="table table-striped">
 					<thead>
 					<tr>
-						<th scope="col">Date</th>
-						<th scope="col">Lieu</th>
-						<th scope="col">Prestation</th>
-						<th scope="col">Notes</th>
+						<th>
+							<f:translate key="tx_accountingsystem_domain_model_consultation.consultationdate"/>
+						</th>
+						<th>
+							<f:translate key="tx_accountingsystem_domain_model_consultation.place"/>
+						</th>
+						<th>
+							<f:translate key="tx_accountingsystem_domain_model_consultation.reason"/>
+						</th>
+						<th>
+							<f:translate key="tx_accountingsystem_domain_model_consultation.ctarif"/>
+						</th>
+						<th>
+							<f:translate key="tx_accountingsystem_domain_model_consultation.quantity"/>
+						</th>
+						<th>
+							<f:translate key="tx_accountingsystem_domain_model_consultation.price"/>
+						</th>
+						<th>
+							<f:translate key="tx_accountingsystem_domain_model_consultation.amount"/>
+						</th>
 					</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<th scope="row">27.03.218</th>
-						<td>Torgon</td>
-						<td>1</td>
-						<td>Amélioration</td>
-					</tr>
-					<tr>
-						<th scope="row">3.04.2018</th>
-						<td>Torgon</td>
-						<td>2</td>
-						<td>Bonne ammélioration</td>
-					</tr>
+					<f:for each="{patient.consultation}" as="consultation">
+						<tr>
+							<td>
+								{consultation.date}
+							</td>
+							<td>
+								{consultation.place}
+							</td>
+							<td>
+								{consultation.reason}
+							</td>
+							<td>
+								{consultation.codetarif}
+							</td>
+							<td>
+								{consultation.quantity}
+							</td>
+							<td>
+								{consultation.price}
+							</td>
+							<td>
+								{consultation.amount}
+							</td>
+						</tr>
+					</f:for>
 					</tbody>
 				</table>
 			</div>
-			<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+			<div class="tab-pane fade" id="invoice" role="tabpanel" aria-labelledby="invoice-tab">
 				<table class="table table-striped">
 					<thead>
 					<tr>
