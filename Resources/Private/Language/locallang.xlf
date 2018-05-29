@@ -57,6 +57,9 @@
 			<trans-unit id="tx_accountingsystem_domain_model_patient.action">
 				<source>Action</source>
 			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.action">
+				<source>Action</source>
+			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_consultation.idpatient">
 				<source>Id Patient</source>
 			</trans-unit>

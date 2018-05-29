@@ -1,15 +1,15 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
+<f:layout name="Default"/>
 
 <f:section name="main">
-<h1>Modification de Patient</h1>
+	<h1>Modification de Consultation</h1>
 
-<f:flashMessages />
+	<f:flashMessages/>
 
-<f:render partial="FormErrors" arguments="{object:Consultation}" />
+	<f:render partial="FormErrors" arguments="{object:Consultation}"/>
 
-<f:form action="update" name="consultation" object="{consultation}" >
-<f:render partial="Consultation/EditForm" arguments="{_all}" />
-</f:form>
+	<f:form action="update" name="consultation" object="{consultation}">
+		<f:render arguments="{_all}" partial="Consultation/EditForm"/>
+	</f:form>
 </f:section>
 </html>
