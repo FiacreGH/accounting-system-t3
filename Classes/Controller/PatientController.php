@@ -85,8 +85,6 @@ class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     }
 
     /**
-     * action edit
-     *
      * @param \CodeID\AccountingSystem\Domain\Model\Patient $patient
      * @ignorevalidation $patient
      * @return void

@@ -80,7 +80,7 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     public function createAction(\CodeID\AccountingSystem\Domain\Model\Consultation $newConsultation)
     {
         $this->consultationRepository->add($newConsultation);
-        $this->redirect('list', 'Patient');
+        $this->redirect('edit','Patient','AccountingSystem',['patient' => $newConsultation->getPatient()]);
     }
 
     /**
@@ -104,20 +104,18 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     public function updateAction(\CodeID\AccountingSystem\Domain\Model\Consultation $consultation)
     {
         $this->consultationRepository->update($consultation);
-        $this->redirect('list','Patient');
+        $this->redirect('edit','Patient','AccountingSystem',['patient' => $consultation->getPatient()]);
     }
 
     /**
-     * action delete
-     *
      * @param \CodeID\AccountingSystem\Domain\Model\Consultation $consultation
+     *
      * @return void
      */
     public function deleteAction(\CodeID\AccountingSystem\Domain\Model\Consultation $consultation)
     {
         $this->consultationRepository->remove($consultation);
-        $this->redirect('list','Patient');
-        // $this->redirect('list','Patient','AccountingSystem','{patient : patient}'); // @todo this line is to be correct
+        $this->redirect('edit','Patient','AccountingSystem',['patient' => $consultation->getPatient()]);
     }
 
     /**
