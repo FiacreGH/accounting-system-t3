@@ -1,5 +1,4 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:debug title="all">{_all}</f:debug>
 
 <div class="row">
 	<div class="col-md-4">
@@ -41,7 +40,7 @@
 									<f:translate key="tx_accountingsystem_domain_model_consultation.reason"/>
 								</label>
 								<div class="input-group col-sm-8">
-									<f:form.select name="motifOption" additionalAttributes="{class:'select2 form-control'}" options="{'Maladie':'Maladie', 'Accident': 'Accident' }" property="reason"/>
+									<f:form.textfield name="motifOption" additionalAttributes="{class:'form-control'}" property="reason"/>
 								</div>
 							</div>
 
@@ -111,7 +110,7 @@
 						<f:translate key="tx_accountingsystem_domain_model_consultation.ctarifshort"/>
 					</label>
 					<div class="col-sm-10">
-						<f:form.select name="tafifOption" additionalAttributes="{class:'select2 form-control'}" options="{'1062 massage classique':'1062 massage classique', '1052 réfléxologie plantaire': '1052 réfléxologie plantaire', '1206 Nutrition':'1206 Nutrition' }" property="codetarif"/>
+						<f:form.textfield name="tafifOption" additionalAttributes="{class:'form-control'}" property="codetarif"/>
 					</div>
 				</div>
 
@@ -120,7 +119,7 @@
 						<f:translate key="tx_accountingsystem_domain_model_consultation.quantity"/>
 					</label>
 					<div class="col-sm-10">
-						<f:form.select name="qtyOption" additionalAttributes="{class:'select2 form-control'}" options="{'8':'8', '12': '12', 18:'18' }" property="quantity"/>
+						<f:form.textfield name="qtyOption" additionalAttributes="{class:'form-control'}"  property="quantity"/>
 					</div>
 				</div>
 
@@ -129,7 +128,7 @@
 						<f:translate key="tx_accountingsystem_domain_model_consultation.price"/>
 					</label>
 					<div class="col-sm-10">
-						<f:form.select name="priceOption" additionalAttributes="{class:'select2 form-control'}" options="{'10':'10', '7,5': '7,5', '7,22':'7,22' }" property="price"/>
+						<f:form.textfield name="priceOption" additionalAttributes="{class:'form-control'}"  property="price"/>
 					</div>
 				</div>
 
