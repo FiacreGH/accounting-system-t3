@@ -79,7 +79,6 @@ class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function createAction(\CodeID\AccountingSystem\Domain\Model\Patient $newPatient)
     {
-//        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->patientRepository->add($newPatient);
         $this->redirect('list');
     }
@@ -102,7 +101,6 @@ class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function updateAction(\CodeID\AccountingSystem\Domain\Model\Patient $patient)
     {
-//        $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->patientRepository->update($patient);
         $this->redirect('list');
     }
@@ -115,7 +113,6 @@ class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function deleteAction(\CodeID\AccountingSystem\Domain\Model\Patient $patient)
     {
-//        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/typo3cms/extensions/extension_builder/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->patientRepository->remove($patient);
         $this->redirect('list');
     }

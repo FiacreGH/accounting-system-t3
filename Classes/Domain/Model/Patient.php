@@ -8,7 +8,7 @@ namespace CodeID\AccountingSystem\Domain\Model;
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
  *
- *  (c) 2018 Fiacre Sankara <fiacre.sankara@gmail.com>, CodeID
+ *  (c) 2018 Fiacre Sankara <fiacre.sankara@gemail.com>, CodeID
  *
  ***/
 
@@ -18,128 +18,92 @@ namespace CodeID\AccountingSystem\Domain\Model;
 class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
-     * nom
-     *
      * @var string
      */
-    protected $nom = '';
+    protected $lastName = '';
 
     /**
-     * prenoms
-     *
      * @var string
      */
-    protected $prenoms = '';
+    protected $firstName = '';
 
     /**
-     * adresse
-     *
      * @var string
      */
-    protected $adresse = '';
+    protected $address = '';
     /**
-     * telephoneportable
-     *
      * @var string
      */
-    protected $rue = '';
+    protected $street = '';
     /**
-     * telephoneportable
-     *
      * @var string
      */
-    protected $codepostal = '';
+    protected $postalCode = '';
     /**
-     * telephoneportable
-     *
      * @var string
      */
-    protected $ville = '';
+    protected $city = '';
 
     /**
-     * telephoneportable
-     *
      * @var string
      */
-    protected $telephoneportable = '';
+    protected $mobilePhone = '';
 
     /**
-     * telephonefixe
-     *
      * @var string
      */
-    protected $telephonefixe = '';
+    protected $phone = '';
 
     /**
-     * mail
-     *
      * @var string
      */
-    protected $mail = '';
+    protected $email = '';
 
     /**
-     * datenaissance
-     *
+     * @var \DateTime
+     */
+    protected $birthDate = '';
+
+    /**
      * @var string
      */
-    protected $datenaissance = '';
+    protected $comments = '';
 
     /**
-     * commentaires
-     *
      * @var string
      */
-    protected $commentaires = '';
+    protected $anamnesis = '';
 
     /**
-     * anamnese
-     *
-     * @var string
-     */
-    protected $anamnese = '';
-
-    /**
-     * accidents
-     *
      * @var string
      */
     protected $accidents = '';
 
     /**
-     * operations
-     *
      * @var string
      */
     protected $operations = '';
 
     /**
-     * maladies
-     *
      * @var string
      */
-    protected $maladies = '';
+    protected $diseases = '';
 
     /**
-     * traitements
-     *
      * @var string
      */
-    protected $traitements = '';
+    protected $treatments = '';
 
     /**
-     * divers
-     *
      * @var string
      */
-    protected $divers = '';
+    protected $other = '';
 
     /**
-     * consultation
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Consultation>
      * @cascade remove
      */
-    protected $consultation = null;
+    protected $consultations = null;
 
     /**
      * __construct
@@ -160,264 +124,214 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      */
     protected function initStorageObjects()
     {
-        $this->consultation = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->consultations = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
-     * Returns the nom
-     *
-     * @return string $nom
+     * @return string $lastName
      */
-    public function getNom()
+    public function getLastName()
     {
-        return $this->nom;
+        return $this->lastName;
     }
 
     /**
-     * Sets the nom
-     *
-     * @param string $nom
+     * @param string $lastName
      * @return void
      */
-    public function setNom($nom)
+    public function setLastName($lastName)
     {
-        $this->nom = $nom;
+        $this->lastName = $lastName;
     }
 
     /**
-     * Returns the prenoms
-     *
-     * @return string $prenoms
+     * @return string $firstName
      */
-    public function getPrenoms()
+    public function getFirstName()
     {
-        return $this->prenoms;
+        return $this->firstName;
     }
 
     /**
-     * Sets the prenoms
-     *
-     * @param string $prenoms
+     * @param string $firstName
      * @return void
      */
-    public function setPrenoms($prenoms)
+    public function setFirstName($firstName)
     {
-        $this->prenoms = $prenoms;
+        $this->firstName = $firstName;
     }
 
     /**
-     * Returns the adresse
-     *
-     * @return string $adresse
+     * @return string $address
      */
-    public function getAdresse()
+    public function getAddress()
     {
-        return $this->adresse;
+        return $this->address;
     }
 
     /**
-     * Sets the adresse
-     *
-     * @param string $adresse
+     * @param string $address
      * @return void
      */
-    public function setAdresse($adresse)
+    public function setAddress($address)
     {
-        $this->adresse = $adresse;
+        $this->address = $address;
     }
 
     /**
-     * Returns the rue
-     *
-     * @return string $rue
+     * @return string $street
      */
-    public function getRue()
+    public function getStreet()
     {
-        return $this->rue;
+        return $this->street;
     }
 
     /**
-     * Sets the rue
-     *
-     * @param string $rue
+     * @param string $street
      * @return void
      */
-    public function setRue($rue)
+    public function setStreet($street)
     {
-        $this->rue = $rue;
+        $this->street = $street;
     }
 
     /**
-     * Returns the codepostal
-     *
-     * @return string $codepostal
+     * @return string $postalCode
      */
-    public function getCodepostal()
+    public function getPostalCode()
     {
-        return $this->codepostal;
+        return $this->postalCode;
     }
 
     /**
-     * Sets the codepostal
-     *
-     * @param string $codepostal
+     * @param string $postalCode
      * @return void
      */
-    public function setCodepostal($codepostal)
+    public function setPostalCode($postalCode)
     {
-        $this->codepostal = $codepostal;
+        $this->postalCode = $postalCode;
     }
 
     /**
-     * Returns the ville
-     *
-     * @return string $ville
+     * @return string $city
      */
-    public function getVille()
+    public function getCity()
     {
-        return $this->ville;
+        return $this->city;
     }
 
     /**
-     * Sets the ville
-     *
-     * @param string $ville
+     * @param string $city
      * @return void
      */
-    public function setVille($ville)
+    public function setCity($city)
     {
-        $this->ville = $ville;
+        $this->city = $city;
     }
 
     /**
-     * Returns the telephoneportable
-     *
-     * @return string $telephoneportable
+     * @return string $mobilePhone
      */
-    public function getTelephoneportable()
+    public function getMobilePhone()
     {
-        return $this->telephoneportable;
+        return $this->mobilePhone;
     }
 
     /**
-     * Sets the telephoneportable
-     *
-     * @param string $telephoneportable
+     * @param string $mobilePhone
      * @return void
      */
-    public function setTelephoneportable($telephoneportable)
+    public function setMobilePhone($mobilePhone)
     {
-        $this->telephoneportable = $telephoneportable;
+        $this->mobilePhone = $mobilePhone;
     }
 
     /**
-     * Returns the telephonefixe
-     *
-     * @return string $telephonefixe
+     * @return string $phone
      */
-    public function getTelephonefixe()
+    public function getPhone()
     {
-        return $this->telephonefixe;
+        return $this->phone;
     }
 
     /**
-     * Sets the telephonefixe
-     *
-     * @param string $telephonefixe
+     * @param string $phone
      * @return void
      */
-    public function setTelephonefixe($telephonefixe)
+    public function setPhone($phone)
     {
-        $this->telephonefixe = $telephonefixe;
+        $this->phone = $phone;
     }
 
     /**
-     * Returns the mail
-     *
-     * @return string $mail
+     * @return string $email
      */
-    public function getMail()
+    public function getEmail()
     {
-        return $this->mail;
+        return $this->email;
     }
 
     /**
-     * Sets the mail
-     *
-     * @param string $mail
+     * @param string $email
      * @return void
      */
-    public function setMail($mail)
+    public function setEmail($email)
     {
-        $this->mail = $mail;
+        $this->email = $email;
     }
 
     /**
-     * Returns the datenaissance
-     *
-     * @return string $datenaissance
+     * @return \DateTime $birthDate
      */
-    public function getDatenaissance()
+    public function getBirthDate()
     {
-        return $this->datenaissance;
+        return $this->birthDate;
     }
 
     /**
-     * Sets the datenaissance
-     *
-     * @param string $datenaissance
+     * @param \DateTime $birthDate
      * @return void
      */
-    public function setDatenaissance($datenaissance)
+    public function setBirthDate($birthDate)
     {
-        $this->datenaissance = $datenaissance;
+        $this->birthDate = $birthDate;
     }
 
     /**
-     * Returns the commentaires
-     *
-     * @return string $commentaires
+     * @return string $comments
      */
-    public function getCommentaires()
+    public function getComments()
     {
-        return $this->commentaires;
+        return $this->comments;
     }
 
     /**
-     * Sets the commentaires
-     *
-     * @param string $commentaires
+     * @param string $comments
      * @return void
      */
-    public function setCommentaires($commentaires)
+    public function setComments($comments)
     {
-        $this->commentaires = $commentaires;
+        $this->comments = $comments;
     }
 
     /**
-     * Returns the anamnese
-     *
-     * @return string $anamnese
+     * @return string $anamnesis
      */
-    public function getAnamnese()
+    public function getAnamnesis()
     {
-        return $this->anamnese;
+        return $this->anamnesis;
     }
 
     /**
-     * Sets the anamnese
-     *
-     * @param string $anamnese
+     * @param string $anamnesis
      * @return void
      */
-    public function setAnamnese($anamnese)
+    public function setAnamnesis($anamnesis)
     {
-        $this->anamnese = $anamnese;
+        $this->anamnesis = $anamnesis;
     }
 
     /**
-     * Returns the accidents
-     *
      * @return string $accidents
      */
     public function getAccidents()
@@ -426,8 +340,6 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the accidents
-     *
      * @param string $accidents
      * @return void
      */
@@ -437,8 +349,6 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the operations
-     *
      * @return string $operations
      */
     public function getOperations()
@@ -447,8 +357,6 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the operations
-     *
      * @param string $operations
      * @return void
      */
@@ -458,108 +366,88 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the maladies
-     *
-     * @return string $maladies
+     * @return string $diseases
      */
-    public function getMaladies()
+    public function getDiseases()
     {
-        return $this->maladies;
+        return $this->diseases;
     }
 
     /**
-     * Sets the maladies
-     *
-     * @param string $maladies
+     * @param string $diseases
      * @return void
      */
-    public function setMaladies($maladies)
+    public function setDiseases($diseases)
     {
-        $this->maladies = $maladies;
+        $this->diseases = $diseases;
     }
 
     /**
-     * Returns the traitements
-     *
-     * @return string $traitements
+     * @return string $treatments
      */
-    public function getTraitements()
+    public function getTreatments()
     {
-        return $this->traitements;
+        return $this->treatments;
     }
 
     /**
-     * Sets the traitements
-     *
-     * @param string $traitements
+     * @param string $treatments
      * @return void
      */
-    public function setTraitements($traitements)
+    public function setTreatments($treatments)
     {
-        $this->traitements = $traitements;
+        $this->treatments = $treatments;
     }
 
     /**
-     * Returns the divers
-     *
-     * @return string $divers
+     * @return string $other
      */
-    public function getDivers()
+    public function getOther()
     {
-        return $this->divers;
+        return $this->other;
     }
 
     /**
-     * Sets the divers
-     *
-     * @param string $divers
+     * @param string $other
      * @return void
      */
-    public function setDivers($divers)
+    public function setOther($other)
     {
-        $this->divers = $divers;
+        $this->other = $other;
     }
 
     /**
-     * Adds a Consultation
-     *
-     * @param \CodeID\AccountingSystem\Domain\Model\Consultation $consultation
+     * @param \CodeID\AccountingSystem\Domain\Model\Consultation $consultations
      * @return void
      */
-    public function addConsultation(\CodeID\AccountingSystem\Domain\Model\Consultation $consultation)
+    public function addConsultations(\CodeID\AccountingSystem\Domain\Model\Consultation $consultation)
     {
-        $this->consultation->attach($consultation);
+        $this->consultations->attach($consultation);
     }
 
     /**
-     * Removes a Consultation
-     *
-     * @param \CodeID\AccountingSystem\Domain\Model\Consultation $consultationToRemove The Consultation to be removed
+     * @param \CodeID\AccountingSystem\Domain\Model\Consultation $consultationsToRemove The Consultation to be removed
      * @return void
      */
-    public function removeConsultation(\CodeID\AccountingSystem\Domain\Model\Consultation $consultationToRemove)
+    public function removeConsultations(\CodeID\AccountingSystem\Domain\Model\Consultation $consultationToRemove)
     {
-        $this->consultation->detach($consultationToRemove);
+        $this->consultations->detach($consultationToRemove);
     }
 
     /**
-     * Returns the consultation
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Consultation> $consultation
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Consultation> $consultations
      */
-    public function getConsultation()
+    public function getConsultations()
     {
-        return $this->consultation;
+        return $this->consultations;
     }
 
     /**
-     * Sets the consultation
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Consultation> $consultation
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Consultation> $consultations
      * @return void
      */
-    public function setConsultation(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $consultation)
+    public function setConsultations(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $consultations)
     {
-        $this->consultation = $consultation;
+        $this->consultations = $consultations;
     }
 }

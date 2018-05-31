@@ -11,14 +11,14 @@
 						        data-target="#collapseOne"
 						        aria-expanded="false"
 						        aria-controls="collapseOne">
-							<b>Patient: {patient.prenoms} {patient.nom}</b>
+							<b>Patient: {patient.firstName} {patient.lastName}</b>
 						</button>
 					</div>
 					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 						<div class="card-body">
 								<f:form.hidden property="patient" value="{patient.uid}"/>
 							<div class="form-group row">
-								<label for="dateconsultation" class="col-sm-4 col-form-label">
+								<label for="date" class="col-sm-4 col-form-label">
 									<f:translate key="tx_accountingsystem_domain_model_consultation.consultationdate"/>
 								</label>
 								<div class="input-group col-sm-8">
@@ -27,7 +27,7 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="lieuconsultation" class="col-sm-4 col-form-label">
+								<label for="place" class="col-sm-4 col-form-label">
 									<f:translate key="tx_accountingsystem_domain_model_consultation.place"/>
 								</label>
 								<div class="input-group col-sm-8">
@@ -36,7 +36,7 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="motif" class="col-sm-4 col-form-label">
+								<label for="reason" class="col-sm-4 col-form-label">
 									<f:translate key="tx_accountingsystem_domain_model_consultation.reason"/>
 								</label>
 								<div class="input-group col-sm-8">
@@ -45,11 +45,11 @@
 							</div>
 
 							<div class="form-group row">
-								<label for="commentaires" class="col-sm-4 col-form-label">
+								<label for="note" class="col-sm-4 col-form-label">
 									<f:translate key="tx_accountingsystem_domain_model_consultation.notice"/>
 								</label>
 								<div class="input-group col-sm-8">
-									<f:form.textarea additionalAttributes="{class:'form-control'}"  rows="17" property="note"/>
+									<f:form.textarea additionalAttributes="{class:'form-control'}"  rows="14" property="note"/>
 								</div>
 							</div>
 						</div>
@@ -87,21 +87,12 @@
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade active in" id="soin" role="tabpanel" aria-labelledby="soin-tab">
-				<div class="form-group row" style="padding-top: 14px">
+				<div class="form-group row" style="padding-top: 17px">
 					<label class="col-sm-2 col-form-label">
-						<f:translate key="tx_accountingsystem_domain_model_consultation.comment"/>
+						<f:translate key="tx_accountingsystem_domain_model_consultation.comments"/>
 					</label>
 					<div class="col-sm-10">
-						<f:form.textarea additionalAttributes="{class:'form-control'}"  rows="6" property="comment"/>
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<label for="tarif" class="col-sm-2 col-form-label">
-						<f:translate key="tx_accountingsystem_domain_model_consultation.tarif"/>
-					</label>
-					<div class=" col-sm-10">
-						<f:form.textfield additionalAttributes="{class:'form-control'}" property="tarif"/>
+						<f:form.textarea additionalAttributes="{class:'form-control'}"  rows="6" property="comments"/>
 					</div>
 				</div>
 
@@ -110,7 +101,7 @@
 						<f:translate key="tx_accountingsystem_domain_model_consultation.ctarifshort"/>
 					</label>
 					<div class="col-sm-10">
-						<f:form.select name="tafifOption" additionalAttributes="{class:'select2 form-control'}" options="{'1062 massage classique':'1062 massage classique', '1052 réfléxologie plantaire': '1052 réfléxologie plantaire', '1206 Nutrition':'1206 Nutrition' }" property="codetarif"/>
+						<f:form.select name="tafifOption" additionalAttributes="{class:'select2 form-control'}" options="{'1062 massage classique':'1062 massage classique', '1052 réfléxologie plantaire': '1052 réfléxologie plantaire', '1206 Nutrition':'1206 Nutrition' }" property="amountCode"/>
 					</div>
 				</div>
 
@@ -119,7 +110,7 @@
 						<f:translate key="tx_accountingsystem_domain_model_consultation.quantity"/>
 					</label>
 					<div class="col-sm-10">
-						<f:form.select name="qtyOption" additionalAttributes="{class:'select2 form-control'}" options="{'8':'8', '12': '12', 18:'18' }" property="quantity"/>
+						<f:form.select name="qtyOption" additionalAttributes="{class:'select2 form-control'}" options="{'6':'6', '12': '12', 18:'18' }" property="quantity"/>
 					</div>
 				</div>
 
@@ -137,7 +128,7 @@
 						<f:translate key="tx_accountingsystem_domain_model_consultation.ptvalue"/>
 					</label>
 					<div class=" col-sm-10">
-						<f:form.textfield additionalAttributes="{class:'form-control'}" property="pointvalue"/>
+						<f:form.textfield additionalAttributes="{class:'form-control'}" property="pointValue" value="1. 00"/>
 					</div>
 				</div>
 
@@ -146,7 +137,7 @@
 						<f:translate key="tx_accountingsystem_domain_model_consultation.tva"/>
 					</label>
 					<div class=" col-sm-10">
-						<f:form.textfield additionalAttributes="{class:'form-control'}" property="tva"/>
+						<f:form.textfield additionalAttributes="{class:'form-control'}" property="tva" value="0%"/>
 					</div>
 				</div>
 
@@ -168,9 +159,6 @@
 						</th>
 						<th scope="col">
 							<f:translate key="tx_accountingsystem_domain_model_consultation.consultationdate"/>
-						</th>
-						<th scope="col">
-							<f:translate key="tx_accountingsystem_domain_model_consultation.tarif"/>
 						</th>
 						<th scope="col">
 							<f:translate key="tx_accountingsystem_domain_model_consultation.ctarifshort"/>
@@ -206,7 +194,7 @@
 		</f:link.action>
 	</div>
 	<div class="col-md-6">
-		<f:form.submit additionalAttributes="{class:'btn btn-primary'}" value="Enregistrer"/>
+		<f:form.submit additionalAttributes="{class:'btn btn-primary'}" value="Créer Consultation"/>
 	</div>
 </div>
 

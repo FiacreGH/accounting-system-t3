@@ -6,21 +6,20 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'versioningWS' => false,
         'delete' => 'deleted',
         'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'date, place, note, comment, tarif, codetarif, quantity, price, pointvalue, tva, amount, invoice',
+        'searchFields' => 'date, place, note, comments, amount_code, quantity, price, point_value, tva, amount, invoice',
         'iconfile' => 'EXT:accounting_system/Resources/Public/Icons/tx_accountingsystem_domain_model_consultation.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, date, place, reason, note, comment, tarif, codetarif, quantity, price, pointvalue, tva, amount, invoice',
+        'showRecordFieldList' => 'hidden, date, place, reason, note, comments, amount_code, quantity, price, point_value, tva, amount, invoice',
     ],
     'types' => [
-        '1' => ['showitem' => 'hidden, date, place, reason, note, comment, tarif, codetarif, quantity, price, pointvalue, tva, amount, invoice, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'hidden, date, place, reason, note, comments, amount_code, quantity, price, point_value, tva, amount, invoice, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'hidden' => [
@@ -65,9 +64,11 @@ return [
             'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.consultationdate',
             'config' => [
+                'dbType' => 'datetime',
                 'type' => 'input',
-                'size' => 150,
-                'eval' => 'trim'
+                'size' => 12,
+                'eval' => 'datetime',
+                'default'  => 'CURRENT_TIMESTAMP'
             ],
         ],
         'place' => [
@@ -98,25 +99,16 @@ return [
                 'eval' => 'trim'
             ],
         ],
-        'comment' => [
+        'comments' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.comment',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.comments',
             'config' => [
                 'type' => 'input',
                 'size' => 255,
                 'eval' => 'trim'
             ],
         ],
-        'tarif' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.tarif',
-            'config' => [
-                'type' => 'input',
-                'size' => 150,
-                'eval' => 'trim'
-            ],
-        ],
-        'codetarif' => [
+        'amount_code' => [
             'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.ctarif',
             'config' => [
@@ -143,7 +135,7 @@ return [
                 'eval' => 'trim'
             ],
         ],
-        'pointvalue' => [
+        'point_value' => [
             'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.ptvalue',
             'config' => [

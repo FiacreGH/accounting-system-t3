@@ -11,16 +11,16 @@
 		<thead>
 		<tr>
 			<th>
-				<f:translate key="tx_accountingsystem_domain_model_patient.nom"/>
+				<f:translate key="tx_accountingsystem_domain_model_patient.last_name"/>
 			</th>
 			<th>
-				<f:translate key="tx_accountingsystem_domain_model_patient.prenoms"/>
+				<f:translate key="tx_accountingsystem_domain_model_patient.first_name"/>
 			</th>
 			<th>
-				<f:translate key="tx_accountingsystem_domain_model_patient.adresse"/>
+				<f:translate key="tx_accountingsystem_domain_model_patient.address"/>
 			</th>
 			<th>
-				<f:translate key="tx_accountingsystem_domain_model_patient.traitements"/>
+				<f:translate key="tx_accountingsystem_domain_model_patient.treatments"/>
 			</th>
 			<th>
 				Action
@@ -31,16 +31,16 @@
 		<f:for each="{patients}" as="patient">
 			<tr>
 				<td>
-					<f:link.action action="show" arguments="{patient : patient}"> {patient.nom}</f:link.action>
+					<f:link.action action="show" arguments="{patient : patient}"> {patient.lastName}</f:link.action>
 				</td>
 				<td>
-					{patient.prenoms}
+					{patient.firstName}
 				</td>
 				<td>
-					{patient.adresse}
+					{patient.address}
 				</td>
 				<td>
-					{patient.traitements}
+					{patient.treatments}
 				</td>
 				<td>
 					<f:link.action action="edit" arguments="{patient : patient}"><span class="glyphicon glyphicon-edit"></span></f:link.action>

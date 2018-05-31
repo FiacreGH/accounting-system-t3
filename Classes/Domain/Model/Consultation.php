@@ -24,8 +24,7 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $patient = '';
 
     /**
-     * \DateTime
-     * @var string
+     * @var \DateTime
      */
     protected $date = '';
 
@@ -35,75 +34,49 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $place = '';
 
     /**
-     * Consultation Reason
-     *
      * @var string
      */
     protected $reason = '';
 
     /**
-     * Notes
-     *
      * @var string
      */
     protected $note = '';
     /**
-     * Comment
-     *
      * @var string
      */
-    protected $comment = '';
+    protected $comments = '';
     /**
-     * Tarif
-     *
      * @var string
      */
-    protected $tarif = '';
-    /**
-     * Tarif Code
-     *
-     * @var string
-     */
-    protected $codetarif = '';
+    protected $amountCode = '';
 
     /**
-     * Quantity
-     *
      * @var string
      */
     protected $quantity = '';
 
     /**
-     * Price
-     *
      * @var string
      */
     protected $price = '';
 
     /**
-     * Point Value
-     *
      * @var string
      */
-    protected $pointvalue = '';
+    protected $pointValue = '';
 
     /**
-     * Tva
-     *
      * @var string
      */
     protected $tva = '';
 
     /**
-     * Amount
-     *
      * @var string
      */
     protected $amount = '';
 
     /**
-     * invoice
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Invoice>
      * @cascade remove
      */
@@ -133,9 +106,7 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
 
     /**
-     * Returns the date
-     *
-     * @return string $date
+     * @return \DateTime $date
      */
     public function getDate()
     {
@@ -143,9 +114,7 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the date
-     *
-     * @param string $date
+     * @param \DateTime $date
      * @return void
      */
     public function setDate($date)
@@ -154,8 +123,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the place
-     *
      * @return string $place
      */
     public function getPlace()
@@ -164,8 +131,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the place
-     *
      * @param string $place
      * @return void
      */
@@ -175,8 +140,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the reason
-     *
      * @return string $reason
      */
     public function getReason()
@@ -185,8 +148,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the reason
-     *
      * @param string $reason
      * @return void
      */
@@ -195,8 +156,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->reason = $reason;
     }
     /**
-     * Returns the note
-     *
      * @return string $note
      */
     public function getNote()
@@ -205,8 +164,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the note
-     *
      * @param string $note
      * @return void
      */
@@ -215,68 +172,39 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->note = $note;
     }
     /**
-     * Returns the comment
-     *
-     * @return string $comment
+     * @return string $comments
      */
-    public function getComment()
+    public function getComments()
     {
-        return $this->comment;
+        return $this->comments;
     }
 
     /**
-     * Sets the comment
-     *
-     * @param string $comment
+     * @param string $comments
      * @return void
      */
-    public function setComment($comment)
+    public function setComments($comments)
     {
-        $this->comment = $comment;
-    }
-    /**
-     * Returns the tarif
-     *
-     * @return string $tarif
-     */
-    public function getTarif()
-    {
-        return $this->tarif;
+        $this->comments = $comments;
     }
 
     /**
-     * Sets the tarif
-     *
-     * @param string $tarif
-     * @return void
+     * @return string $amountCode
      */
-    public function setTarif($tarif)
+    public function getAmountCode()
     {
-        $this->tarif = $tarif;
-    }
-    /**
-     * Returns the codetarif
-     *
-     * @return string $codetarif
-     */
-    public function getCodetarif()
-    {
-        return $this->codetarif;
+        return $this->amountCode;
     }
 
     /**
-     * Sets the codetarif
-     *
-     * @param string $codetarif
+     * @param string $amountCode
      * @return void
      */
-    public function setCodetarif($codetarif)
+    public function setAmountCode($amountCode)
     {
-        $this->codetarif = $codetarif;
+        $this->amountCode = $amountCode;
     }
     /**
-     * Returns the quantity
-     *
      * @return string $quantity
      */
     public function getQuantity()
@@ -285,8 +213,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the quantity
-     *
      * @param string $quantity
      * @return void
      */
@@ -295,8 +221,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->quantity = $quantity;
     }
     /**
-     * Returns the price
-     *
      * @return string $price
      */
     public function getPrice()
@@ -305,8 +229,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the price
-     *
      * @param string $price
      * @return void
      */
@@ -315,28 +237,22 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->price = $price;
     }
     /**
-     * Returns the pointvalue
-     *
-     * @return string $pointvalue
+     * @return string $pointValue
      */
-    public function getPointvalue()
+    public function getPointValue()
     {
-        return $this->pointvalue;
+        return $this->pointValue;
     }
 
     /**
-     * Sets the pointvalue
-     *
-     * @param string $pointvalue
+     * @param string $pointValue
      * @return void
      */
-    public function setPointvalue($pointvalue)
+    public function setPointValue($pointValue)
     {
-        $this->pointvalue = $pointvalue;
+        $this->pointValue = $pointValue;
     }
     /**
-     * Returns the tva
-     *
      * @return string $tva
      */
     public function getTva()
@@ -345,8 +261,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the tva
-     *
      * @param string $tva
      * @return void
      */
@@ -355,8 +269,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->tva = $tva;
     }
     /**
-     * Returns the amount
-     *
      * @return string $amount
      */
     public function getAmount()
@@ -365,8 +277,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the amount
-     *
      * @param string $amount
      * @return void
      */
@@ -375,8 +285,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->amount = $amount;
     }
     /**
-     * Adds a Invoice
-     *
      * @param \CodeID\AccountingSystem\Domain\Model\Invoice $invoice
      * @return void
      */
@@ -386,8 +294,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Removes a Invoice
-     *
      * @param \CodeID\AccountingSystem\Domain\Model\Invoice $invoiceToRemove The Invoice to be removed
      * @return void
      */
@@ -397,8 +303,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the invoice
-     *
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Invoice> $invoice
      */
     public function getInvoice()
@@ -407,8 +311,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the invoice
-     *
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Invoice> $invoice
      * @return void
      */
@@ -418,8 +320,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Returns the patient
-     *
      * @return \CodeID\AccountingSystem\Domain\Model\Patient $patient
      */
     public function getPatient()
@@ -428,8 +328,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * Sets the patient
-     *
      * @param \CodeID\AccountingSystem\Domain\Model\Patient $patient
      * @return void
      */

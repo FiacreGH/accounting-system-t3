@@ -6,40 +6,40 @@
 			<trans-unit id="tx_accountingsystem_domain_model_patient">
 				<source>Patient</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.nom">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.last_name">
 				<source>Nom</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.prenoms">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.first_name">
 				<source>Prenoms</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.adresse">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.address">
 				<source>Adresse</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.rue">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.street">
 				<source>Rue</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.codepostal">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.postal_code">
 				<source>Cde Postal</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.ville">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.city">
 				<source>Ville</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.telephoneportable">
-				<source>Telephoneportable</source>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.mobile_phone">
+				<source>Telephone portable</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.telephonefixe">
-				<source>Telephonefixe</source>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.phone">
+				<source>Telephone fixe</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.mail">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.email">
 				<source>Mail</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.datenaissance">
-				<source>Datenaissance</source>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.birth_date">
+				<source>Date de naissance</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.commentaires">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.comments">
 				<source>Commentaires</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.anamnese">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.anamnesis">
 				<source>Anamnese</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.accidents">
@@ -48,20 +48,20 @@
 			<trans-unit id="tx_accountingsystem_domain_model_patient.operations">
 				<source>Operations</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.maladies">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.diseases">
 				<source>Maladies</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.traitements">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.treatments">
 				<source>Traitements</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_patient.divers">
+			<trans-unit id="tx_accountingsystem_domain_model_patient.other">
 				<source>Divers</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.consultation">
-				<source>Consultation</source>
+				<source>Consultations</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_consultation">
-				<source>Consultation</source>
+				<source>Consultations</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_consultation.invoice">
 				<source>Facture</source>

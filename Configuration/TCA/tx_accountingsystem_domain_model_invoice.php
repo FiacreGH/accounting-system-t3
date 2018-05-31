@@ -6,7 +6,6 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'versioningWS' => false,
         'delete' => 'deleted',
         'enablecolumns' => [
             'disabled' => 'hidden',

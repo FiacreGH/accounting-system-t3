@@ -11,7 +11,7 @@
 							        data-target="#collapseOne"
 							        aria-expanded="false"
 							        aria-controls="collapseOne">
-								<b>{patient.prenoms} {patient.nom}</b>
+								<b>{patient.firstName} {patient.lastName}</b>
 							</button>
 					</div>
 
@@ -20,98 +20,98 @@
 							<form>
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.prenoms"/>
+										<f:translate key="tx_accountingsystem_domain_model_patient.first_name"/>
 									</label>
 									<div class="input-group col-sm-9">
-										<input type="text" readonly class="form-control" value="{patient.prenoms}">
+										<input type="text" readonly class="form-control" value="{patient.firstName}">
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.nom"/>
+										<f:translate key="tx_accountingsystem_domain_model_patient.last_name"/>
 									</label>
 									<div class="input-group col-sm-9">
-										<input type="text" readonly class="form-control" value="{patient.nom}">
+										<input type="text" readonly class="form-control" value="{patient.lastName}">
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.adresse"/>
+										<f:translate key="tx_accountingsystem_domain_model_patient.address"/>
 									</label>
 									<div class="input-group col-sm-9">
-										<input type="text" readonly class="form-control" value="{patient.adresse}">
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.rue"/>
-									</label>
-									<div class="input-group col-sm-9">
-										<input type="text" readonly class="form-control" value="{patient.rue}">
-									</div>
-								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.codepostal"/>
-									</label>
-									<div class="input-group col-sm-9">
-										<input type="text" readonly class="form-control" value="{patient.codepostal}">
-									</div>
-								</div>
-								<div class="form-group row">
-									<label class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.ville"/>
-									</label>
-									<div class="input-group col-sm-9">
-										<input type="text" readonly class="form-control" value="{patient.ville}">
+										<input type="text" readonly class="form-control" value="{patient.address}">
 									</div>
 								</div>
 
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">
+										<f:translate key="tx_accountingsystem_domain_model_patient.street"/>
+									</label>
+									<div class="input-group col-sm-9">
+										<input type="text" readonly class="form-control" value="{patient.street}">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">
+										<f:translate key="tx_accountingsystem_domain_model_patient.postal_code"/>
+									</label>
+									<div class="input-group col-sm-9">
+										<input type="text" readonly class="form-control" value="{patient.postalCode}">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-3 col-form-label">
+										<f:translate key="tx_accountingsystem_domain_model_patient.city"/>
+									</label>
+									<div class="input-group col-sm-9">
+										<input type="text" readonly class="form-control" value="{patient.city}">
+									</div>
+								</div>
+
 
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.telephoneportable"/>
+										<f:translate key="tx_accountingsystem_domain_model_patient.mobile_phone"/>
 									</label>
 									<div class="input-group col-sm-9">
 										<input type="text"
 										       readonly
 										       class="form-control"
-										       value="{patient.telephoneportable}">
+										       value="{patient.mobilePhone}">
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.telephonefixe"/>
+										<f:translate key="tx_accountingsystem_domain_model_patient.phone"/>
 									</label>
 									<div class="input-group col-sm-9">
 										<input type="text"
 										       readonly
 										       class="form-control"
-										       value="{patient.telephonefixe}">
+										       value="{patient.phone}">
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.mail"/>
+										<f:translate key="tx_accountingsystem_domain_model_patient.email"/>
 									</label>
 									<div class="input-group col-sm-9">
-										<input type="text" readonly class="form-control" value="{patient.mail}">
-										<a href="mailto:{patient.mail}" class="btn input-group-addon"> @</a>
+										<input type="text" readonly class="form-control" value="{patient.email}">
+										<a href="mailto:{patient.email}" class="btn input-group-addon"> @</a>
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">Naissance</label>
 									<div class="input-group col-sm-9">
-										<input type="text" readonly class="form-control" value="{patient.datenaissance}">
+										<input type="text" readonly class="form-control" value="{patient.birthDate}">
 									</div>
 								</div>
 								<div class="form-group row">
 									<label class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.divers"/>
+										<f:translate key="tx_accountingsystem_domain_model_patient.other"/>
 									</label>
 									<div class="input-group col-sm-9">
-										<input type="text" readonly class="form-control" value="{patient.divers}">
+										<input type="text" readonly class="form-control" value="{patient.other}">
 									</div>
 								</div>
 							</form>
@@ -176,38 +176,38 @@
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">
-							<f:translate key="tx_accountingsystem_domain_model_patient.maladies"/>
+							<f:translate key="tx_accountingsystem_domain_model_patient.diseases"/>
 						</label>
 						<div class="col-sm-10">
-							<input type="text" readonly class="form-control" value="{patient.maladies}">
+							<input type="text" readonly class="form-control" value="{patient.diseases}">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">
-							<f:translate key="tx_accountingsystem_domain_model_patient.traitements"/>
+							<f:translate key="tx_accountingsystem_domain_model_patient.treatments"/>
 						</label>
 						<div class="col-sm-10">
-							<input type="text" readonly class="form-control" value="{patient.traitements}">
+							<input type="text" readonly class="form-control" value="{patient.treatments}">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">
-							<f:translate key="tx_accountingsystem_domain_model_patient.anamnese"/>
+							<f:translate key="tx_accountingsystem_domain_model_patient.anamnesis"/>
 						</label>
 						<div class="col-sm-10">
-							<input type="text" readonly class="form-control" value="{patient.anamnese}">
+							<input type="text" readonly class="form-control" value="{patient.anamnesis}">
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2 col-form-label">
-							<f:translate key="tx_accountingsystem_domain_model_patient.commentaires"/>
+							<f:translate key="tx_accountingsystem_domain_model_patient.comments"/>
 						</label>
 						<div class="col-sm-10">
 							<textarea name=""
 							          readonly
 							          id=""
 							          rows="3"
-							          class="form-control">{patient.commentaires}</textarea>
+							          class="form-control">{patient.comments}</textarea>
 						</div>
 					</div>
 				</form>
@@ -240,7 +240,7 @@
 					</tr>
 					</thead>
 					<tbody>
-					<f:for each="{patient.consultation}" as="consultation">
+					<f:for each="{patient.consultations}" as="consultation">
 						<tr>
 							<td>
 								{consultation.date}
@@ -252,7 +252,7 @@
 								{consultation.reason}
 							</td>
 							<td>
-								{consultation.codetarif}
+								{consultation.amountCode}
 							</td>
 							<td>
 								{consultation.quantity}

@@ -2,25 +2,24 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient',
-        'label' => 'nom',
+        'label' => 'last_name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'versioningWS' => false,
         'delete' => 'deleted',
         'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'nom,prenoms,adresse,telephoneportable,telephonefixe,mail,datenaissance,commentaires,anamnese,accidents,operations,maladies,traitements,divers,consultation',
+        'searchFields' => 'last_name,first_name,address,mobile_phone,phone,email,birth_date,comments,anamnesis,accidents,operations,diseases,treatments,other,consultations',
         'iconfile' => 'EXT:accounting_system/Resources/Public/Icons/tx_accountingsystem_domain_model_patient.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, nom, prenoms, adresse, rue, codepostal, ville, telephoneportable, telephonefixe, mail, datenaissance, commentaires, anamnese, accidents, operations, maladies, traitements, divers, consultation',
+        'showRecordFieldList' => 'hidden,  last_name, first_name,  address,  street, postal_code, city, mobile_phone, phone, email, birth_date, comments, anamnesis, accidents, operations, diseases, treatments, other, consultations',
     ],
     'types' => [
-        '1' => ['showitem' => 'hidden, nom, prenoms, adresse, rue, codepostal, ville, telephoneportable, telephonefixe, mail, datenaissance, commentaires, anamnese, accidents, operations, maladies, traitements, divers, consultation, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'hidden,  last_name, first_name,  address,  street, postal_code, city, mobile_phone, phone, email, birth_date, comments, anamnesis, accidents, operations, diseases, treatments, other, consultations, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
         'hidden' => [
@@ -61,108 +60,110 @@ return [
             ],
         ],
 
-        'nom' => [
+        'last_name' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.nom',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.last_name',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'prenoms' => [
+        'first_name' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.prenoms',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.first_name',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'adresse' => [
+        'address' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.adresse',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.address',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'rue' => [
+        'street' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.rue',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.street',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'codepostal' => [
+        'postal_code' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.codepostal',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.postal_code',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'ville' => [
+        'city' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.ville',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.city',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'telephoneportable' => [
+        'mobile_phone' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.telephoneportable',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.mobile_phone',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'telephonefixe' => [
+        'phone' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.telephonefixe',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.phone',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'mail' => [
+        'email' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.mail',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.email',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'datenaissance' => [
+        'birth_date' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.datenaissance',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.birth_date',
             'config' => [
+                'dbType' => 'date',
                 'type' => 'input',
-                'size' => 150,
-                'eval' => 'trim'
+                'size' => 7,
+                'eval' => 'date',
+                'default'  => 'CURRENT_TIMESTAMP'
             ],
         ],
-        'commentaires' => [
+        'comments' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.commentaires',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.comments',
             'config' => [
                 'type' => 'input',
                 'size' => 255,
                 'eval' => 'trim'
             ],
         ],
-        'anamnese' => [
+        'anamnesis' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.anamnese',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.anamnesis',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
@@ -187,36 +188,36 @@ return [
                 'eval' => 'trim'
             ],
         ],
-        'maladies' => [
+        'diseases' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.maladies',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.diseases',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'traitements' => [
+        'treatments' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.traitements',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.treatments',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'divers' => [
+        'other' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.divers',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.other',
             'config' => [
                 'type' => 'input',
                 'size' => 150,
                 'eval' => 'trim'
             ],
         ],
-        'consultation' => [
+        'consultations' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.consultation',
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_patient.consultations',
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_accountingsystem_domain_model_consultation',
