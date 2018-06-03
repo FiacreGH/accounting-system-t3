@@ -97,7 +97,7 @@
 							<div class="form-group row">
 								<label for="birthDate" class="col-sm-4 col-form-label">Naissance</label>
 								<div class="input-group col-sm-8">
-									<f:form.textfield additionalAttributes="{class:'form-control'}" type="datetime-local" property="birthDate"/>
+									<f:form.textfield additionalAttributes="{class:'form-control'}" property="birthDate" value="{patient.birthDate->f:format.date()}"/>
 								</div>
 							</div>
 							<div class="form-group row">

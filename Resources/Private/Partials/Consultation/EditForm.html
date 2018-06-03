@@ -22,7 +22,7 @@
 									<f:translate key="tx_accountingsystem_domain_model_consultation.consultationdate"/>
 								</label>
 								<div class="input-group col-sm-8">
-									<f:form.textfield additionalAttributes="{class:'form-control'}" type="datetime-local" property="date"/>
+									<f:form.textfield additionalAttributes="{class:'form-control'}" property="date" value="{consultation.date->f:format.date()}"/>
 								</div>
 							</div>
 

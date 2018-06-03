@@ -38,6 +38,20 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     }
 
     /**
+     * @return void
+     */
+    public
+    function initializeCreateAction()
+    {
+        if (isset($this->arguments['newConsultation'])) {
+            $this->arguments['newConsultation']
+                ->getPropertyMappingConfiguration()
+                ->forProperty('date')
+                ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
+                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'd.m.Y H:i:s');
+        }
+    }
+    /**
      * action list
      *
      * @return void

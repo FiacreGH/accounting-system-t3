@@ -38,6 +38,21 @@ class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     }
 
     /**
+     * @return void
+     */
+    public
+    function initializeCreateAction()
+    {
+        if (isset($this->arguments['newPatient'])) {
+            $this->arguments['newPatient']
+                ->getPropertyMappingConfiguration()
+                ->forProperty('birthDate')
+                ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
+                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'd.m.Y H:i:s');
+        }
+    }
+
+    /**
      * action list
      *
      * @return void
