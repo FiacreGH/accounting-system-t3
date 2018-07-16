@@ -1,0 +1,85 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="main">
+	<h1>Recettes mensuelles pour {serviceProvider}</h1>
+	<f:link.action additionalAttributes="{class: 'accounting-button btn btn-primary'}"
+	               action="annuallyAccounting"><span class="glyphicon glyphicon-transfer"></span>&nbsp;Aperçu annuel
+	</f:link.action>
+	<f:link.action id="link-monthly"
+	               action="monthlyAccounting"
+	               style="display: none"
+	               noCacheHash="true">Aperçu mensuel
+	</f:link.action>
+	<div class="jumbotron">
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<th>
+					Mois
+				</th>
+				<th>
+					Année
+				</th>
+				<th>
+					Montant attendu
+				</th>
+				<th>
+					Montant facturé
+				</th>
+				<th>
+					Clients facturés
+				</th>
+				<th>
+					Consultations non facturées
+				</th>
+				<th>
+					Consultations facturées
+				</th>
+				<th>
+					Factures
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>
+					<f:form.select style="color: black"
+					               id="month"
+					               name="monthOption"
+					               options="{months}"
+					               value="{currentMonth}"/>
+				</td>
+				<td>
+					<f:form.select style="color: black"
+					               id="year"
+					               name="yearOption"
+					               options="{years}"
+					               value="{currentYear}"/>
+				</td>
+				<td>
+					{expectedAmount}
+				</td>
+				<td>
+					{invoicesAmount}
+				</td>
+				<td>
+					{numberOfPatients}
+				</td>
+				<td>
+					{numberOfNotInvoicedConsultations}
+				</td>
+				<td>
+					{numberOfInvoicedConsultations}
+				</td>
+				<td>
+					{numberOfInvoices}
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<span style="margin-top: 10%; float: left">
+					Vous avez au total {totalNumberOfPatients} clients, {totalNumberOfConsultations} Consultations et {totalNumberOfInvoices} Factures pour un montant total attendu de {expectedAmount}.
+		</span>
+	</div>
+</f:section>
+</html>

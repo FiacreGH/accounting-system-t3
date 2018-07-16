@@ -2,110 +2,111 @@
 
 <div class="row">
 	<div class="col-md-4">
-		<div>
-			<div id="accordion">
-				<div class="card">
-					<div class="card-header" id="headingOne">
-						<h5 class="mb-0">
-							<button class="btn btn-link"
-							        data-toggle="collapse"
-							        data-target="#collapseOne"
-							        aria-expanded="false"
-							        aria-controls="collapseOne">
-							</button>
-						</h5>
+		<div class="card">
+			<div class="card-header" id="headingOne">
+				<b>&nbsp;</b>
+			</div>
+
+			<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+				<div class="card-body">
+					<div class="form-group row">
+						<label for="firstName" class="col-sm-3 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.first_name"/>
+						</label>
+						<div class="col-sm-9">
+							<f:form.textfield id="firstName"
+							                  additionalAttributes="{class:'form-control'}"
+							                  property="firstName"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="lastName" class="col-sm-3 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.last_name"/>
+						</label>
+						<div class="col-sm-9">
+							<f:form.textfield id="lastName"
+							                  additionalAttributes="{class:'form-control'}"
+							                  property="lastName"/>
+						</div>
 					</div>
 
-					<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-						<div class="card-body">
-								<div class="form-group row">
-									<label for="firstName" class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.first_name"/>
-									</label>
-									<div class="col-sm-9">
-										<f:form.textfield additionalAttributes="{class:'form-control'}" property="firstName"/>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="lastName" class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.last_name"/>
-									</label>
-									<div class="col-sm-9">
-										<f:form.textfield additionalAttributes="{class:'form-control'}" property="lastName"/>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="address" class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.address"/>
-									</label>
-									<div class="col-sm-9">
-										<f:form.textfield additionalAttributes="{class:'form-control'}" property="address"/>
-									</div>
-								</div>
+					<div class="form-group row">
+						<label for="street" class="col-sm-3 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.street"/>
+						</label>
+						<div class="col-sm-9">
+							<f:form.textfield id="street"
+							                  additionalAttributes="{class:'form-control'}"
+							                  property="street"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="postalCode" class="col-sm-3 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.postal_code"/>
+						</label>
+						<div class="col-sm-9">
+							<f:form.textfield id="postalCode"
+							                  additionalAttributes="{class:'form-control'}"
+							                  property="postalCode"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="city" class="col-sm-3 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.city"/>
+						</label>
+						<div class="col-sm-9">
+							<f:form.textfield id="city" additionalAttributes="{class:'form-control'}" property="city"/>
+						</div>
+					</div>
 
-							<div class="form-group row">
-								<label for="street" class="col-sm-3 col-form-label">
-									<f:translate key="tx_accountingsystem_domain_model_patient.street"/>
-								</label>
-								<div class="col-sm-9">
-									<f:form.textfield additionalAttributes="{class:'form-control'}" property="street"/>
-								</div>
-							</div>
-							<div class="form-group row">
-								<label for="postalCode" class="col-sm-3 col-form-label">
-									<f:translate key="tx_accountingsystem_domain_model_patient.postal_code"/>
-								</label>
-								<div class="col-sm-9">
-									<f:form.textfield additionalAttributes="{class:'form-control'}" property="postalCode"/>
-								</div>
-							</div>
-							<div class="form-group row">
-								<label for="city" class="col-sm-3 col-form-label">
-									<f:translate key="tx_accountingsystem_domain_model_patient.city"/>
-								</label>
-								<div class="col-sm-9">
-									<f:form.textfield additionalAttributes="{class:'form-control'}" property="city"/>
-								</div>
-							</div>
-
-								<div class="form-group row">
-									<label for="mobilePhone" class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.mobile_phone"/>
-									</label>
-									<div class="col-sm-9">
-										<f:form.textfield additionalAttributes="{class:'form-control'}" property="mobilePhone"/>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="phone" class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.phone"/>
-									</label>
-									<div class="col-sm-9">
-										<f:form.textfield additionalAttributes="{class:'form-control'}" property="phone"/>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="email" class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.email"/>
-									</label>
-									<div class="col-sm-9">
-										<f:form.textfield additionalAttributes="{class:'form-control'}" type="email" property="email"/>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="birthDate" class="col-sm-3 col-form-label">Naissance</label>
-									<div class="col-sm-9">
-										<f:form.textfield additionalAttributes="{class:'form-control'}" type="date" property="birthDate"/>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label for="other" class="col-sm-3 col-form-label">
-										<f:translate key="tx_accountingsystem_domain_model_patient.other"/>
-									</label>
-									<div class="col-sm-9">
-										<f:form.textfield additionalAttributes="{class:'form-control'}" property="other"/>
-									</div>
-								</div>
+					<div class="form-group row">
+						<label for="mobilePhone" class="col-sm-3 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.mobile_phone"/>
+						</label>
+						<div class="col-sm-9">
+							<f:form.textfield id="mobilePhone"
+							                  additionalAttributes="{class:'form-control'}"
+							                  property="mobilePhone"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="phone" class="col-sm-3 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.phone"/>
+						</label>
+						<div class="col-sm-9">
+							<f:form.textfield id="phone"
+							                  additionalAttributes="{class:'form-control'}"
+							                  property="phone"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="email" class="col-sm-3 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.email"/>
+						</label>
+						<div class="col-sm-9">
+							<f:form.textfield id="email"
+							                  additionalAttributes="{class:'form-control'}"
+							                  type="email"
+							                  property="email"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="birthDate" class="col-sm-3 col-form-label">Naissance</label>
+						<div class="col-sm-9">
+							<f:form.textfield id="birthDate"
+							                  additionalAttributes="{class:'form-control'}"
+							                  type="date"
+							                  property="birthDate"/>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="other" class="col-sm-3 col-form-label">
+							<f:translate key="tx_accountingsystem_domain_model_patient.other"/>
+						</label>
+						<div class="col-sm-9">
+							<f:form.textfield id="other"
+							                  additionalAttributes="{class:'form-control'}"
+							                  property="other"/>
 						</div>
 					</div>
 				</div>
@@ -128,54 +129,79 @@
 		</ul>
 		<div class="tab-content" id="myTabContent">
 			<div class="tab-pane fade active in" id="home" role="tabpanel" aria-labelledby="home-tab">
-					<div class="form-group row">
-						<label for="accidents" class="col-sm-2 col-form-label">
-							<f:translate key="tx_accountingsystem_domain_model_patient.accidents"/>
-						</label>
-						<div class="col-sm-10">
-							<f:form.textfield additionalAttributes="{class:'form-control'}" property="accidents"/>
-						</div>
+				<div class="form-group row">
+					<label for="accidents" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.accidents"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textfield id="accidents"
+						                  additionalAttributes="{class:'form-control'}"
+						                  property="accidents"/>
 					</div>
-					<div class="form-group row">
-						<label for="operations" class="col-sm-2 col-form-label">
-							<f:translate key="tx_accountingsystem_domain_model_patient.operations"/>
-						</label>
-						<div class="col-sm-10">
-							<f:form.textfield additionalAttributes="{class:'form-control'}" property="operations"/>
-						</div>
+				</div>
+				<div class="form-group row">
+					<label for="operations" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.operations"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textfield id="operations"
+						                  additionalAttributes="{class:'form-control'}"
+						                  property="operations"/>
 					</div>
-					<div class="form-group row">
-						<label for="diseases" class="col-sm-2 col-form-label">
-							<f:translate key="tx_accountingsystem_domain_model_patient.diseases"/>
-						</label>
-						<div class="col-sm-10">
-							<f:form.textfield additionalAttributes="{class:'form-control'}" property="diseases"/>
-						</div>
+				</div>
+				<div class="form-group row">
+					<label for="diseases" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.diseases"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textfield id="diseases"
+						                  additionalAttributes="{class:'form-control'}"
+						                  property="diseases"/>
 					</div>
-					<div class="form-group row">
-						<label for="treatments" class="col-sm-2 col-form-label">
-							<f:translate key="tx_accountingsystem_domain_model_patient.treatments"/>
-						</label>
-						<div class="col-sm-10">
-							<f:form.textfield additionalAttributes="{class:'form-control'}" property="treatments"/>
-						</div>
+				</div>
+				<div class="form-group row">
+					<label for="treatments" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.treatments"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textfield id="treatments"
+						                  additionalAttributes="{class:'form-control'}"
+						                  property="treatments"/>
 					</div>
-					<div class="form-group row">
-						<label for="anamnesis" class="col-sm-2 col-form-label">
-							<f:translate key="tx_accountingsystem_domain_model_patient.anamnesis"/>
-						</label>
-						<div class="col-sm-10">
-							<f:form.textfield additionalAttributes="{class:'form-control'}" property="anamnesis"/>
-						</div>
+				</div>
+				<div class="form-group row">
+					<label for="anamnesis" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.anamnesis"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textfield id="anamnesis"
+						                  additionalAttributes="{class:'form-control'}"
+						                  property="anamnesis"/>
 					</div>
-					<div class="form-group row">
-						<label for="comments" class="col-sm-2 col-form-label">
-							<f:translate key="tx_accountingsystem_domain_model_patient.comments"/>
-						</label>
-						<div class="col-sm-10">
-							<f:form.textarea additionalAttributes="{class:'form-control'}" property="comments"/>
-						</div>
+				</div>
+
+				<div class="form-group row" style="padding-top: 10px">
+					<label for="comments" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.comments"/>
+					</label>
+					<div class="col-sm-10" style="padding-top: 10px">
+						<f:form.textarea id="comments"
+						                 rows="4"
+						                 additionalAttributes="{class:'form-control'}"
+						                 property="comments"/>
 					</div>
+				</div>
+				<div class="form-group row">
+					<label for="comments_invoice" class="col-sm-2 col-form-label">
+						<f:translate key="tx_accountingsystem_domain_model_patient.comments_invoice"/>
+					</label>
+					<div class="col-sm-10">
+						<f:form.textarea id="comments_invoice"
+						                 rows="4"
+						                 additionalAttributes="{class:'form-control'}"
+						                 property="commentsInvoice"/>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

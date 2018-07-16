@@ -1,4 +1,5 @@
 <?php
+
 namespace CodeID\AccountingSystem\Controller;
 
 /***
@@ -12,10 +13,12 @@ namespace CodeID\AccountingSystem\Controller;
  *
  ***/
 
+use TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter;
+
 /**
  * ConsultationController
  */
-class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ConsultationController extends AbstractAccountingSystemController
 {
     /**
      * consultationRepository
@@ -30,27 +33,21 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
      */
     public function initializeAction()
     {
-        if (!$this->getFrontendUserData()) {
+        parent::initializeAction();
 
-            throw new \RuntimeException('Error: user must be logged in!', 1524814048);
-
-        }
-    }
-
-    /**
-     * @return void
-     */
-    public
-    function initializeCreateAction()
-    {
-        if (isset($this->arguments['newConsultation'])) {
-            $this->arguments['newConsultation']
+        if (isset($this->arguments['consultation'])) {
+            $this->arguments['consultation']
                 ->getPropertyMappingConfiguration()
                 ->forProperty('date')
-                ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
-                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'd.m.Y H:i:s');
+                ->setTypeConverterOption(
+                    DateTimeConverter::class,
+                    DateTimeConverter::CONFIGURATION_DATE_FORMAT,
+                    'Y-m-d'
+                );
+
         }
     }
+
     /**
      * action list
      *
@@ -58,11 +55,8 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
      */
     public function listAction()
     {
-        $consultations = $this->consultationRepository->findAllBySearchTerm($searchTerm = '');
-        $this->view->assignMultiple([
-            'consultations' => $consultations,
-            'searchTerm' => $searchTerm
-        ]);
+        $consultations = $this->consultationRepository->findByServiceProvider($this->getFrontendUserData()['uid']);
+        $this->view->assign('consultations', $consultations);
     }
 
     /**
@@ -88,25 +82,29 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     /**
      * action create
      *
-     * @param \CodeID\AccountingSystem\Domain\Model\Consultation $newConsultation
+     * @param \CodeID\AccountingSystem\Domain\Model\Consultation $consultation
      * @return void
      */
-    public function createAction(\CodeID\AccountingSystem\Domain\Model\Consultation $newConsultation)
+    public function createAction(\CodeID\AccountingSystem\Domain\Model\Consultation $consultation)
     {
-        $this->consultationRepository->add($newConsultation);
-        $this->redirect('edit','Patient','AccountingSystem',['patient' => $newConsultation->getPatient()]);
+        $consultation->setServiceProvider($this->getFrontendUserData()['uid']);
+        $this->consultationRepository->add($consultation);
+        $this->redirect('edit', 'Patient', 'AccountingSystem', ['patient' => $consultation->getPatient()]);
     }
 
     /**
      * action edit
      *
      * @param \CodeID\AccountingSystem\Domain\Model\Consultation $consultation
+     * @param \CodeID\AccountingSystem\Domain\Model\Patient $patient
      * @ignorevalidation $consultation
      * @return void
      */
-    public function editAction(\CodeID\AccountingSystem\Domain\Model\Consultation $consultation)
+    public function editAction(\CodeID\AccountingSystem\Domain\Model\Consultation $consultation,
+                               \CodeID\AccountingSystem\Domain\Model\Patient $patient)
     {
         $this->view->assign('consultation', $consultation);
+        $this->view->assign('patient', $patient);
     }
 
     /**
@@ -117,8 +115,9 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
      */
     public function updateAction(\CodeID\AccountingSystem\Domain\Model\Consultation $consultation)
     {
+        $consultation->setServiceProvider($this->getFrontendUserData()['uid']);
         $this->consultationRepository->update($consultation);
-        $this->redirect('edit','Patient','AccountingSystem',['patient' => $consultation->getPatient()]);
+        $this->redirect('edit', 'Patient', 'AccountingSystem', ['patient' => $consultation->getPatient()]);
     }
 
     /**
@@ -129,28 +128,6 @@ class ConsultationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCon
     public function deleteAction(\CodeID\AccountingSystem\Domain\Model\Consultation $consultation)
     {
         $this->consultationRepository->remove($consultation);
-        $this->redirect('edit','Patient','AccountingSystem',['patient' => $consultation->getPatient()]);
-    }
-
-    /**
-     * Returns an instance of the current Frontend User.
-     *
-     * @return \TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication
-     */
-    protected function getFrontendUser()
-    {
-        return $GLOBALS['TSFE']->fe_user;
-    }
-
-
-
-    /**
-     * Returns user data of the current Frontend User.
-     *
-     * @return array
-     */
-    protected function getFrontendUserData()
-    {
-        return $this->getFrontendUser()->user ? $this->getFrontendUser()->user : [];
+        $this->redirect('edit', 'Patient', 'AccountingSystem', ['patient' => $consultation->getPatient()]);
     }
 }

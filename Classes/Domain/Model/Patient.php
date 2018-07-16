@@ -1,4 +1,5 @@
 <?php
+
 namespace CodeID\AccountingSystem\Domain\Model;
 
 /***
@@ -19,26 +20,26 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
     /**
      * @var string
+     * @validate NotEmpty
      */
     protected $lastName = '';
 
     /**
      * @var string
+     * @validate NotEmpty
      */
     protected $firstName = '';
 
     /**
      * @var string
      */
-    protected $address = '';
-    /**
-     * @var string
-     */
     protected $street = '';
+
     /**
      * @var string
      */
     protected $postalCode = '';
+
     /**
      * @var string
      */
@@ -72,6 +73,11 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @var string
      */
+    protected $commentsInvoice = '';
+
+    /**
+     * @var string
+     */
     protected $anamnesis = '';
 
     /**
@@ -101,9 +107,15 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Consultation>
-     * @cascade remove
      */
-    protected $consultations = null;
+    protected $consultations;
+
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Invoice>
+     */
+    protected $invoices;
+
 
     /**
      * __construct
@@ -125,6 +137,7 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected function initStorageObjects()
     {
         $this->consultations = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->invoices = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -159,23 +172,6 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     public function setFirstName($firstName)
     {
         $this->firstName = $firstName;
-    }
-
-    /**
-     * @return string $address
-     */
-    public function getAddress()
-    {
-        return $this->address;
-    }
-
-    /**
-     * @param string $address
-     * @return void
-     */
-    public function setAddress($address)
-    {
-        $this->address = $address;
     }
 
     /**
@@ -315,6 +311,23 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
+     * @return string $commentsInvoice
+     */
+    public function getCommentsInvoice()
+    {
+        return $this->commentsInvoice;
+    }
+
+    /**
+     * @param string $commentsInvoice
+     * @return void
+     */
+    public function setCommentsInvoice($commentsInvoice)
+    {
+        $this->commentsInvoice = $commentsInvoice;
+    }
+
+    /**
      * @return string $anamnesis
      */
     public function getAnamnesis()
@@ -450,4 +463,23 @@ class Patient extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->consultations = $consultations;
     }
+
+    /**
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     */
+    public function getInvoices()
+    {
+        return $this->invoices;
+    }
+
+    /**
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $invoices
+     * @return $this
+     */
+    public function setInvoices($invoices)
+    {
+        $this->invoices = $invoices;
+        return $this;
+    }
+
 }

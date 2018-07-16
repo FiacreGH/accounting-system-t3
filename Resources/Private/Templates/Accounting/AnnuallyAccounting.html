@@ -1,0 +1,54 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="main">
+	<h1>Recettes annuelles pour {serviceProvider}</h1>
+	<f:link.action additionalAttributes="{class:'accounting-button btn btn-primary' }"
+	               action="monthlyAccounting"><span class="glyphicon glyphicon-transfer"></span>&nbsp;Aperçu mensuel
+	</f:link.action>
+	<div class="jumbotron">
+		<table class="table table-striped">
+			<thead>
+			<tr>
+				<th>
+					Année
+				</th>
+				<th>
+					Montant total
+				</th>
+				<th>
+					Clients
+				</th>
+				<th>
+					Consultations
+				</th>
+				<th>
+					Factures
+				</th>
+			</tr>
+			</thead>
+			<tbody>
+			<f:for each="{summaries}" as="summary">
+				<tr>
+					<td>
+						{summary.year}
+					</td>
+					<td>
+						{summary.amount}
+					</td>
+					<td>
+						{summary.numberOfPatients}
+					</td>
+					<td>
+						{summary.numberOfConsultations}
+					</td>
+					<td>
+						{summary.numberOfInvoices}
+					</td>
+				</tr>
+			</f:for>
+			</tbody>
+		</table>
+	</div>
+</f:section>
+</html>

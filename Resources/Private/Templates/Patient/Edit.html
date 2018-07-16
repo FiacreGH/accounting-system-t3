@@ -3,14 +3,14 @@
 
 
 <f:section name="main">
-	<h1>Modification de Patient</h1>
+	<h1>Modification du Patient: {patient.firstName} {patient.lastName}</h1>
 
 	<f:flashMessages/>
 
 	<f:render partial="FormErrors" arguments="{object:Patient}"/>
 
 	<f:form action="update" name="patient" object="{patient}">
-		<f:render partial="Patient/EditForm" arguments="{patient:patient}"/>
+		<f:render partial="Patient/EditForm" arguments="{_all}"/>
 	</f:form>
 </f:section>
 </html>

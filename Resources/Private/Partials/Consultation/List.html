@@ -1,58 +1,99 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default"/>
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<th>
 
-<f:section name="main">
-	<h1>Liste des patients</h1>
-	<f:flashMessages/>
-	<f:flashMessages/>
-
-
-	<table id="table_id" class="display">
-		<thead>
-		<tr>
-			<th>
-				<f:translate key="tx_accountingsystem_domain_model_patient.last_name"/>
-			</th>
-			<th>
-				<f:translate key="tx_accountingsystem_domain_model_patient.first_name"/>
-			</th>
-			<th>
-				<f:translate key="tx_accountingsystem_domain_model_patient.address"/>
-			</th>
-			<th>
-				<f:translate key="tx_accountingsystem_domain_model_patient.treatments"/>
-			</th>
-			<th>
-				Action
-			</th>
-		</tr>
-		</thead>
-		<tbody>
-		<f:for each="{patients}" as="patient">
+		</th>
+		<th>
+			<f:translate key="tx_accountingsystem_domain_model_consultation.consultationdate"/>
+		</th>
+		<th>
+			<f:translate key="tx_accountingsystem_domain_model_consultation.place"/>
+		</th>
+		<th>
+			<f:translate key="tx_accountingsystem_domain_model_consultation.reason"/>
+		</th>
+		<th>
+			<f:translate key="tx_accountingsystem_domain_model_consultation.ctarif"/>
+		</th>
+		<th>
+			<f:translate key="tx_accountingsystem_domain_model_consultation.quantity"/>
+		</th>
+		<th>
+			<f:translate key="tx_accountingsystem_domain_model_consultation.price"/>
+		</th>
+		<th>
+			<f:translate key="tx_accountingsystem_domain_model_consultation.amount"/>
+		</th>
+		<th>
+			<f:translate key="tx_accountingsystem_domain_model_consultation.action"/>
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+	<f:for each="{patient.consultations}" as="consultation">
+		<f:if condition="{consultation.serviceProvider} == {serviceProvider}">
 			<tr>
 				<td>
-					<f:link.action action="show" arguments="{patient : patient}"> {patient.lastName}</f:link.action>
+					<f:if condition="!{consultation.isInvoiced}">
+						<f:form.checkbox class="consultations" name="consultations[]" value="{consultation.uid}"/>
+					</f:if>
 				</td>
 				<td>
-					{patient.firstName}
+					{consultation.date->f:format.date()}
 				</td>
 				<td>
-					{patient.address}
+					{consultation.place}
 				</td>
 				<td>
-					{patient.treatments}
+					{consultation.reason}
 				</td>
 				<td>
-					<f:link.action action="edit" arguments="{patient : patient}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
-					&nbsp; &nbsp; &nbsp;
-					<f:link.action action="delete"  arguments="{patient : patient}"><span class="delete-confirm glyphicon glyphicon-trash"></span></f:link.action>
+					{consultation.amountCode}
+				</td>
+				<td>
+					{consultation.quantity}
+				</td>
+				<td>
+					{consultation.price}
+				</td>
+				<td>
+					{consultation.amount}
+				</td>
+				<td>
+					<f:link.action action="edit"
+					               controller="Consultation"
+					               arguments="{consultation : consultation, patient: patient}">
+						<span class="glyphicon glyphicon-edit"></span></f:link.action>
+					<f:if condition="!{consultation.isInvoiced}">
+					<f:link.action action="delete" controller="Consultation" arguments="{consultation : consultation}">
+						<span class="delete-confirm glyphicon glyphicon-trash"></span></f:link.action>
+					</f:if>
 				</td>
 			</tr>
-		</f:for>
-		</tbody>
-	</table>
-	<f:link.action action="new">
-		<f:form.button additionalAttributes="{class:'btn btn-primary'}">Ajouter Patient</f:form.button>
-	</f:link.action>
-</f:section>
+		</f:if>
+	</f:for>
+	</tbody>
+</table>
+<div class="row">
+	<div class="col-md-6">
+		<f:link.action additionalAttributes="{class:'btn btn-primary'}"
+		               action="new"
+		               controller="Consultation"
+		               name="consultation"
+		               arguments="{patient: patient}">
+			<f:translate key="tx_accountingsystem_domain_model_consultation.add"/>
+		</f:link.action>
+	</div>
+	<div class="col-md-6">
+		<f:link.action id="gen-invoice"
+		               additionalAttributes="{class:'btn btn-primary'}"
+		               action="create"
+		               controller="Invoice"
+		               noCacheHash="true">
+			Génerer Facture
+		</f:link.action>
+	</div>
+</div>
 </html>

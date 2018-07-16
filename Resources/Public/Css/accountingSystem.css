@@ -1,0 +1,46 @@
+textarea.f3-form-error {
+    background-color: #FF9F9F;
+    border: 1px #FF0000 solid;
+}
+
+input.f3-form-error {
+    background-color: #FF9F9F;
+    border: 1px #FF0000 solid;
+}
+
+.tx-accounting-system table th {
+    font-weight: bold;
+}
+
+.tx-accounting-system table td {
+    vertical-align: top;
+}
+
+.typo3-messages .message-error {
+    color: red;
+}
+
+.typo3-messages .message-ok {
+    color: green;
+}
+.accounting-button{
+    margin-bottom: 10px !important;
+    border-radius: 3px !important;
+    font-weight: bolder !important;
+}
+.jumbotron{
+    border-radius: 6px !important;
+    padding: 10px 10px 10px 10px !important;
+    min-height: 300px !important;
+}
+
+#headingOne {
+    padding-bottom: 13%;
+}
+
+#headingTwo {
+    padding-bottom: 13%;
+}
+.jumbotron table tbody tr{
+    background-color: transparent !important;
+}

@@ -1,12 +1,8 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default"/>
-
 <f:section name="main">
 	<h1>Liste des patients</h1>
 	<f:flashMessages/>
-	<f:flashMessages/>
-
-
 	<table id="table_id" class="display">
 		<thead>
 		<tr>
@@ -31,28 +27,35 @@
 		<f:for each="{patients}" as="patient">
 			<tr>
 				<td>
-					<f:link.action action="show" arguments="{patient : patient}"> {patient.lastName}</f:link.action>
+					<f:link.action action="edit" arguments="{patient : patient}">
+						{patient.lastName}
+					</f:link.action>
 				</td>
 				<td>
-					{patient.firstName}
+					<f:link.action action="edit" arguments="{patient : patient}">
+						{patient.firstName}
+					</f:link.action>
 				</td>
+
 				<td>
-					{patient.address}
+					{patient.street}
 				</td>
 				<td>
 					{patient.treatments}
 				</td>
 				<td>
-					<f:link.action action="edit" arguments="{patient : patient}"><span class="glyphicon glyphicon-edit"></span></f:link.action>
-					&nbsp; &nbsp; &nbsp;
-					<f:link.action action="delete"  arguments="{patient : patient}"><span class="delete-confirm glyphicon glyphicon-trash"></span></f:link.action>
+
+					<f:link.action action="edit" arguments="{patient : patient}">
+						<span class="glyphicon glyphicon-edit"></span>
+					</f:link.action>
+
 				</td>
 			</tr>
 		</f:for>
 		</tbody>
 	</table>
 	<f:link.action action="new">
-		<f:form.button additionalAttributes="{class:'btn btn-primary'}">
+		<f:form.button class="btn btn-primary">
 			<f:translate key="tx_accountingsystem_domain_model_patient.add"/>
 		</f:form.button>
 	</f:link.action>

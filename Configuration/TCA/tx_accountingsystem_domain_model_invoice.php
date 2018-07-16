@@ -2,7 +2,7 @@
 return [
     'ctrl' => [
         'title' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_invoice',
-        'label' => 'uid',
+        'label' => 'invoice_file_name',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
@@ -16,14 +16,13 @@ return [
         'iconfile' => 'EXT:accounting_system/Resources/Public/Icons/tx_accountingsystem_domain_model_invoice.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => ' hidden, ',
+        'showRecordFieldList' => ' invoice_file_name, amount, date, invoice_id, service_provider, consultations, patient',
     ],
     'types' => [
-        '1' => ['showitem' => ' hidden, , --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'invoice_file_name, amount, date, invoice_id, service_provider, consultations, patient'],
     ],
     'columns' => [
         'hidden' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
@@ -34,33 +33,66 @@ return [
                 ],
             ],
         ],
-        'starttime' => [
-            'exclude' => true,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
+        'invoice_file_name' => [
+            'label' => 'Invoice File Name',
             'config' => [
                 'type' => 'input',
-                'size' => 13,
-                'eval' => 'datetime',
-                'default' => 0,
+                'size' => 150,
+                'eval' => 'trim'
             ],
         ],
-        'endtime' => [
-            'exclude' => true,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
+        'amount' => [
+            'label' => 'Invoice Amount',
             'config' => [
                 'type' => 'input',
-                'size' => 13,
+                'size' => 30,
+                'eval' => 'double2'
+            ],
+        ],
+        'date' => [
+            'label' => 'Invoice Date',
+            'config' => [
+                'dbType' => 'datetime',
+                'type' => 'input',
+                'size' => 12,
                 'eval' => 'datetime',
-                'default' => 0,
-                'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
+                'default'  => 'CURRENT_TIMESTAMP'
+            ],
+        ],
+        'invoice_id' => [
+            'label' => 'Invoice Id',
+            'config' => [
+                'type' => 'input',
+                'size' => 11,
+                'eval' => 'int'
+            ],
+        ],
+        'service_provider' => [
+            'label' => 'Accounter Id',
+            'config' => [
+                'type' => 'input',
+                'size' => 4,
+                'eval' => 'int'
+            ],
+        ],
+        'consultations' => [
+            'label' => 'Consultations',
+            'config' => [
+                'type' => 'inline',
+                'foreign_table' => 'tx_accountingsystem_domain_model_consultation',
+                'foreign_field' => 'invoice',
+                'maxitems' => 9999,
+                'appearance' => [
+                    'collapseAll' => 0,
+                    'levelLinksPosition' => 'top',
+                    'showSynchronizationLink' => 1,
+                    'showPossibleLocalizationRecords' => 1,
+                    'showAllLocalizationLink' => 1
                 ],
             ],
-        ],
 
-        'consultation' => [
+        ],
+        'patient' => [
             'config' => [
                 'type' => 'passthrough',
             ],

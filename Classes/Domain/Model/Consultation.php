@@ -1,4 +1,5 @@
 <?php
+
 namespace CodeID\AccountingSystem\Domain\Model;
 
 /***
@@ -22,6 +23,11 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * @var \CodeID\AccountingSystem\Domain\Model\Patient
      */
     protected $patient = '';
+
+    /**
+     * @var int
+     */
+    protected $serviceProvider;
 
     /**
      * @var \DateTime
@@ -52,14 +58,14 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     protected $amountCode = '';
 
     /**
-     * @var string
+     * @var int
      */
-    protected $quantity = '';
+    protected $quantity = 0;
 
     /**
-     * @var string
+     * @var float
      */
-    protected $price = '';
+    protected $price = 0.0;
 
     /**
      * @var string
@@ -69,41 +75,27 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * @var string
      */
-    protected $tva = '';
+    protected $rate = '';
 
     /**
      * @var string
      */
-    protected $amount = '';
+    protected $tva = '';
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Invoice>
-     * @cascade remove
+     * @var float
      */
-    protected $invoice = null;
+    protected $amount = 0.0;
 
     /**
-     * __construct
+     * @var bool
      */
-    public function __construct()
-    {
-        //Do not remove the next line: It would break the functionality
-        $this->initStorageObjects();
-    }
+    protected $isInvoiced = false;
 
     /**
-     * Initializes all ObjectStorage properties
-     * Do not modify this method!
-     * It will be rewritten on each save in the extension builder
-     * You may modify the constructor of this class instead
-     *
-     * @return void
+     * @var \CodeID\AccountingSystem\Domain\Model\Invoice
      */
-    protected function initStorageObjects()
-    {
-        $this->invoice = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-    }
-
+    protected $invoice;
 
     /**
      * @return \DateTime $date
@@ -155,6 +147,7 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->reason = $reason;
     }
+
     /**
      * @return string $note
      */
@@ -171,6 +164,7 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->note = $note;
     }
+
     /**
      * @return string $comments
      */
@@ -189,22 +183,6 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @return string $amountCode
-     */
-    public function getAmountCode()
-    {
-        return $this->amountCode;
-    }
-
-    /**
-     * @param string $amountCode
-     * @return void
-     */
-    public function setAmountCode($amountCode)
-    {
-        $this->amountCode = $amountCode;
-    }
-    /**
      * @return string $quantity
      */
     public function getQuantity()
@@ -220,6 +198,7 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->quantity = $quantity;
     }
+
     /**
      * @return string $price
      */
@@ -236,6 +215,7 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->price = $price;
     }
+
     /**
      * @return string $pointValue
      */
@@ -252,6 +232,24 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->pointValue = $pointValue;
     }
+
+    /**
+     * @return string $rate
+     */
+    public function getRate()
+    {
+        return $this->rate;
+    }
+
+    /**
+     * @param string $rate
+     * @return void
+     */
+    public function setRate($rate)
+    {
+        $this->rate = $rate;
+    }
+
     /**
      * @return string $tva
      */
@@ -268,8 +266,54 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->tva = $tva;
     }
+
     /**
-     * @return string $amount
+     * @return bool
+     */
+    public function isInvoiced()
+    {
+        return $this->isInvoiced;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsInvoiced()
+    {
+        return $this->isInvoiced;
+    }
+
+    /**
+     * @param bool $isInvoiced
+     * @return $this
+     */
+    public function setIsInvoiced($isInvoiced)
+    {
+        $this->isInvoiced = $isInvoiced;
+        return $this;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getAmountCode()
+    {
+        return $this->amountCode;
+    }
+
+    /**
+     * @param string $amountCode
+     * @return $this
+     */
+    public function setAmountCode($amountCode)
+    {
+        $this->amountCode = $amountCode;
+        return $this;
+    }
+
+    /**
+     * @return float
      */
     public function getAmount()
     {
@@ -277,47 +321,33 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     }
 
     /**
-     * @param string $amount
-     * @return void
+     * @param float $amount
+     * @return $this
      */
     public function setAmount($amount)
     {
         $this->amount = $amount;
-    }
-    /**
-     * @param \CodeID\AccountingSystem\Domain\Model\Invoice $invoice
-     * @return void
-     */
-    public function addInvoice(\CodeID\AccountingSystem\Domain\Model\Invoice $invoice)
-    {
-        $this->invoice->attach($invoice);
+        return $this;
     }
 
     /**
-     * @param \CodeID\AccountingSystem\Domain\Model\Invoice $invoiceToRemove The Invoice to be removed
-     * @return void
+     * @return int
      */
-    public function removeInvoice(\CodeID\AccountingSystem\Domain\Model\Invoice $invoiceToRemove)
+    public function getServiceProvider()
     {
-        $this->invoice->detach($invoiceToRemove);
+        return $this->serviceProvider;
     }
 
     /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Invoice> $invoice
+     * @param int $serviceProvider
+     * @return $this
      */
-    public function getInvoice()
+    public function setServiceProvider($serviceProvider)
     {
-        return $this->invoice;
+        $this->serviceProvider = $serviceProvider;
+        return $this;
     }
 
-    /**
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\CodeID\AccountingSystem\Domain\Model\Invoice> $invoice
-     * @return void
-     */
-    public function setInvoice(\CodeID\AccountingSystem\Domain\Model\Invoice $invoice)
-    {
-        $this->invoice = $invoice;
-    }
 
     /**
      * @return \CodeID\AccountingSystem\Domain\Model\Patient $patient
@@ -335,4 +365,23 @@ class Consultation extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->patient = $patient;
     }
+
+    /**
+     * @return Invoice
+     */
+    public function getInvoice()
+    {
+        return $this->invoice;
+    }
+
+    /**
+     * @param Invoice $invoice
+     * @return $this
+     */
+    public function setInvoice($invoice)
+    {
+        $this->invoice = $invoice;
+        return $this;
+    }
+
 }

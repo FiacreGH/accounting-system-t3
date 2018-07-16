@@ -1,4 +1,5 @@
 <?php
+
 namespace CodeID\AccountingSystem\Domain\Repository;
 
 /***
@@ -12,9 +13,57 @@ namespace CodeID\AccountingSystem\Domain\Repository;
  *
  ***/
 
+use TYPO3\CMS\Extbase\Persistence\Repository;
+
 /**
- * The repository for Invoces
+ * The repository for Invoices
  */
-class InvoiceRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class InvoiceRepository extends Repository
 {
+
+    /**
+     * @param int $serviceProvider
+     * @param string $dateBegin
+     * @param string $dateEnd
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findByServiceProviderAndDateInterval($serviceProvider, $dateBegin, $dateEnd)
+    {
+        $query = $this->createQuery();
+
+        if (!empty($serviceProvider)) {
+
+            $constraints = [
+                $query->equals('serviceProvider', $serviceProvider),
+                $query->greaterThanOrEqual('date', $dateBegin),
+                $query->lessThanOrEqual('date', $dateEnd),
+            ];
+
+            $query->matching(
+                $query->logicalAnd($constraints)
+            );
+        }
+
+        return $query->execute();
     }
+
+    /**
+     * @param int $serviceProvider
+     * @param int $year
+     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     */
+    public function findByServiceProviderAndYear($serviceProvider, $year)
+    {
+        $query = $this->createQuery();
+
+        $constraints = [
+            $query->equals('serviceProvider', $serviceProvider),
+            $query->greaterThanOrEqual('date', $year . '-00-00'),
+            $query->lessThanOrEqual('date', $year . '-12-31'),
+        ];
+        $query->matching(
+            $query->logicalAnd($constraints)
+        );
+        return $query->execute();
+    }
+}

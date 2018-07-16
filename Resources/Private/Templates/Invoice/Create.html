@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Espace bien-être l'aurore</title>
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700&subset=latin,latin-ext'
+	      rel='stylesheet'
+	      type='text/css'>
+	<!-- <link rel="stylesheet" href="sass/main.css" media="screen" charset="utf-8"/> -->
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta http-equiv="content-type" content="text-html; charset=utf-8">
+	<style type="text/css">
+		body {
+			font-size: 15px;
+		}
+
+		.invoice-format {
+			min-height: 1580px;
+		}
+
+		td {
+			padding-right: 10px;
+		}
+
+		table {
+			text-align: justify;
+		}
+
+		.invoce-footer {
+			position: fixed;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			margin-bottom: 0px;
+		}
+
+		.table-bordered {
+			margin: 0 auto;
+			width: 1080px;
+			border: solid 1px black;
+		}
+
+		.table-no-border {
+			margin: 0 auto;
+			width: 1080px;
+		}
+
+		.table-no-border td {
+			padding-right: 70px;
+		}
+
+		.spaced td {
+			padding-right: 70px;
+		}
+	</style>
+</head>
+
+<body>
+<header class="clearfix">
+</header>
+
+<section>
+	<div class="invoice-format container">
+		<div class="row">
+			<div class="table-no-border">
+				<table>
+					<tr>
+						<td>
+							Justificatif&nbsp;de&nbsp;remboursement,&nbsp;Exemplaire&nbsp;pour&nbsp;l'assureur
+						</td>
+					</tr>
+					<tr>
+					</tr>
+				</table>
+			</div>
+			<div class="table-bordered">
+				<table>
+					<tr>
+						<td>
+							Document
+						</td>
+						<td>
+							Identification
+						</td>
+						<td>
+							{currentTstamp}&nbsp;{currentDate}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Auteur
+						</td>
+						<td>
+							N°GLN
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							{user.company} {user.first_name} {user.last_name}
+						</td>
+						<td>
+							E-mail:
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Facture
+						</td>
+						<td>
+							N°RCC
+						</td>
+						<td>
+							{user.code_reference}
+						</td>
+						<td>
+							{user.address}
+						</td>
+						<td>
+							{user.email}
+						</td>
+						<td>
+							Tel: {user.telephone}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Four. de
+						</td>
+						<td>
+							N°GLN
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							{user.company} {user.first_name} {user.last_name}
+						</td>
+						<td>
+							Site Web:
+						</td>
+					</tr>
+					<tr>
+						<td>
+							prestations
+						</td>
+						<td>
+							N°RCC
+						</td>
+						<td>
+							{user.code_reference}
+						</td>
+						<td>
+							{user.address}
+						</td>
+						<td>
+							{user.www}
+						</td>
+						<td>
+							Tel: {user.telephone}
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="table-bordered">
+				<table>
+					<tr>
+						<td>
+							Patient/client
+						</td>
+						<td>
+							Nom
+						</td>
+						<td>
+							{patient.lastName}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Prénom
+						</td>
+						<td>
+							{patient.firstName}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Rue
+						</td>
+						<td>
+							{patient.street}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							NPA
+						</td>
+						<td>
+							{patient.postalCode}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Date de Naissance
+						</td>
+						<td>
+							{patient.birthDate->f:format.date()}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Loi
+						</td>
+						<td>
+							LCA
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Sexe
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Date cas
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							N° Patient
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							N° AVS
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							N° CADA
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							N° assuré
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Canton
+						</td>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Copie
+						</td>
+						<td>
+							Non
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Type de remboursement
+						</td>
+						<td>
+							TG
+						</td>
+						<td>
+							Date/N° GaPrCh
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							N° contrat
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Date/N° facture
+						</td>
+						<td>
+							{currentDateShort} {currentTstamp}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Traitement
+						</td>
+						<td>
+							{firstDate} - {lastDate}
+						</td>
+						<td>
+							Date/N° rappel
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							Rôle
+						</td>
+						<td>
+							Médécine complémentaire
+						</td>
+						<td>
+							Motif traitement
+						</td>
+						<td>
+							{reason}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							N°/Nom entreprise
+						</td>
+						<td>
+							/
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="table-bordered spaced">
+				<table>
+					<tr>
+						<td>
+							Mandataire
+						</td>
+						<td>
+							GLN
+						</td>
+						<td>
+							RCC
+						</td>
+						<td>
+							Nom
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="table-bordered">
+				<table>
+					<tr>
+						<td>
+							Diagnostics / troubles
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="table-bordered spaced">
+				<table>
+					<tr>
+						<td>
+							Thérapie
+						</td>
+						<td>
+							Thérapie individuelle
+						</td>
+						<td>
+							Valeur du point (Vpt) 1.00
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							&nbsp;
+						</td>
+						<td>
+							TVA
+						</td>
+						<td>
+							Oui
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="table-bordered">
+				<table>
+					<tr>
+						<td>
+							Commentaire
+						</td>
+						<td>
+
+						</td>
+						<td>
+							{patient.commentsInvoice}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							&nbsp;
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="table-no-border">
+				<table>
+					<tr>
+						<td>
+							Date
+						</td>
+						<td>
+							Tarif
+						</td>
+						<td>
+							Code tarifaire
+						</td>
+						<td>
+							Quantité
+						</td>
+						<td>
+							Prix
+						</td>
+						<td>
+							Vpt
+						</td>
+						<td>
+							TVA
+						</td>
+						<td>
+							Montant
+						</td>
+					</tr>
+					<f:for each="{invoice.consultations}" as="consultation">
+						<tr>
+							<td>
+								{consultation.date->f:format.date()}
+							</td>
+							<td>
+								{consultation.rate}
+							</td>
+							<td>
+								{consultation.amountCode}
+							</td>
+							<td>
+								{consultation.quantity}
+							</td>
+							<td>
+								{consultation.price}
+							</td>
+							<td>
+								{consultation.pointValue}
+							</td>
+							<td>
+								{consultation.tva}
+							</td>
+							<td>
+								{consultation.amount}
+							</td>
+						</tr>
+					</f:for>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="table-no-border spaced invoce-footer">
+		<table>
+			<tr>
+				<td>
+					Codic
+				</td>
+				<td>
+					Tasso
+				</td>
+				<td>
+					Montant
+				</td>
+				<td>
+					TVA
+				</td>
+				<td>
+					TVA&nbsp;N°
+				</td>
+				<td>
+				</td>
+				<td>
+					Montant&nbsp;Total&nbsp;
+				</td>
+				<td>
+					{totalAmount}
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					0
+				</td>
+				<td>
+					0.0
+				</td>
+				<td>
+					{totalAmount}
+				</td>
+				<td>
+					0.00
+				</td>
+				<td>
+					Monaie&nbsp;&nbsp;CHF
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					1
+				</td>
+				<td>
+					2.5
+				</td>
+				<td>
+					0.00
+				</td>
+				<td>
+					0.00
+				</td>
+				<td>
+					IBAN
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+				<td>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					2
+				</td>
+				<td>
+					7.5
+				</td>
+				<td>
+					0.00
+				</td>
+				<td>
+					0.00
+				</td>
+				<td>
+					<b>Payable&nbsp;à&nbsp;30&nbsp;Jours&nbsp;Net</b>
+				</td>
+				<td>
+					<b>Acompte</b>
+				</td>
+				<td>
+					<b>Montant&nbsp;dû</b>
+				</td>
+				<td>
+					<b>{totalAmount}</b>
+				</td>
+			</tr>
+		</table>
+	</div>
+</section>
+</body>
+
+</html>

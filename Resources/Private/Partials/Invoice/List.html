@@ -1,0 +1,46 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<table class="table table-striped">
+	<thead>
+	<tr>
+		<th scope="col">
+			Id Facture
+		</th>
+		<th scope="col">
+			Date
+		</th>
+		<th scope="col">
+			<f:translate key="tx_accountingsystem_domain_model_consultation.amount"/>
+		</th>
+		<th scope="col">
+			Actions
+		</th>
+	</tr>
+	</thead>
+	<tbody>
+	<f:for each="{patient.invoices}" as="invoice">
+		<f:if condition="{invoice.serviceProvider} == {serviceProvider}">
+			<tr>
+				<td>
+					{invoice.invoiceId}
+				</td>
+				<td>
+					{f:format.date(date:invoice.date, format:'d.m.y H:i:s')}
+				</td>
+				<td>
+					{invoice.amount} CHF
+				</td>
+				<td>
+					<a href="/fileadmin/invoices/{invoice.invoiceFileName}" target="_blank">
+						<span class="glyphicon glyphicon-eye-open"></span></a>
+					<f:link.action action="delete" controller="Invoice" arguments="{invoice : invoice}">
+						<span class="delete-confirm glyphicon glyphicon-trash"></span></f:link.action>
+				</td>
+			</tr>
+		</f:if>
+	</f:for>
+	</tbody>
+</table>
+<f:link.action additionalAttributes="{class:'btn btn-primary'}" action="" arguments="{patient : patient}">
+	<f:translate key="tx_accountingsystem_domain_model_invoice.printbill"/>
+</f:link.action>
+</html>

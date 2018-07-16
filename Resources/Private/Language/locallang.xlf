@@ -72,14 +72,14 @@
 			<trans-unit id="tx_accountingsystem_domain_model_consultation.ptvalue">
 				<source>V.Point</source>
 			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_consultation.rate">
+				<source>Tarif</source>
+			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_consultation.tva">
 				<source>TVA</source>
 			</trans-unit>
-			<trans-unit id="tx_accountingsystem_domain_model_consultation.care">
-				<source>Soins</source>
-			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_consultation.billing">
-				<source>Facturations</source>
+				<source>Facturation</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_consultation.type">
 				<source>Type</source>
@@ -113,6 +113,9 @@
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.comments">
 				<source>Commentaires</source>
+			</trans-unit>
+			<trans-unit id="tx_accountingsystem_domain_model_patient.comments_invoice">
+				<source>Comm.Fact</source>
 			</trans-unit>
 			<trans-unit id="tx_accountingsystem_domain_model_patient.anamnesis">
 				<source>Anamnese</source>

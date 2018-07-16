@@ -7,11 +7,15 @@ call_user_func(
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'CodeID.AccountingSystem',
-            'Accountingsystem',
-            'Accounting System'
+            'Patient',
+            'Patient management'
         );
-
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('accounting_system', 'Configuration/TypoScript', 'Accounting System');
+        \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+            'CodeID.AccountingSystem',
+            'Accounting',
+            'Accounting'
+        );
+        #\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile('accounting_system', 'Configuration/TypoScript', 'Accounting System');
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_accountingsystem_domain_model_patient');
 
@@ -21,4 +25,5 @@ call_user_func(
 
     }
 );
-$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['accountingsystem_accountingsystem'] = 'select_key,recursive,pages';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['accountingsystem_patient'] = 'select_key,recursive,pages';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['accountingsystem_accounting'] = 'select_key,recursive,pages';

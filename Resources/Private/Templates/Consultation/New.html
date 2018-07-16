@@ -2,13 +2,13 @@
 <f:layout name="Default"/>
 
 <f:section name="main">
-	<h1>Nouvelle Consultation</h1>
+	<h1>Nouvelle consultation pour {patient.firstName} {patient.lastName}</h1>
 
 	<f:flashMessages/>
 
 	<f:render partial="FormErrors" arguments="{object:Consultation}"/>
 
-	<f:form action="create" name="newConsultation" object="{newConsultation}">
+	<f:form action="create" name="consultation" object="{consultation}">
 		<f:render arguments="{_all}" partial="Consultation/NewForm"/>
 	</f:form>
 </f:section>

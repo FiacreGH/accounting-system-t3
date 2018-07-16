@@ -1,4 +1,5 @@
 <?php
+
 namespace CodeID\AccountingSystem\Controller;
 
 /***
@@ -15,7 +16,10 @@ namespace CodeID\AccountingSystem\Controller;
 /**
  * PatientController
  */
-class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+
+use TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter;
+
+class PatientController extends AbstractAccountingSystemController
 {
     /**
      * patientRepository
@@ -30,25 +34,17 @@ class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function initializeAction()
     {
-        if (!$this->getFrontendUserData()) {
+        parent::initializeAction();
 
-            throw new \RuntimeException('Error: user must be logged in!', 1524814048);
-
-        }
-    }
-
-    /**
-     * @return void
-     */
-    public
-    function initializeCreateAction()
-    {
-        if (isset($this->arguments['newPatient'])) {
-            $this->arguments['newPatient']
+        if (isset($this->arguments['patient'])) {
+            $this->arguments['patient']
                 ->getPropertyMappingConfiguration()
                 ->forProperty('birthDate')
-                ->setTypeConverterOption('TYPO3\\CMS\\Extbase\\Property\\TypeConverter\\DateTimeConverter',
-                    \TYPO3\CMS\Extbase\Property\TypeConverter\DateTimeConverter::CONFIGURATION_DATE_FORMAT, 'd.m.Y H:i:s');
+                ->setTypeConverterOption(
+                    DateTimeConverter::class,
+                    DateTimeConverter::CONFIGURATION_DATE_FORMAT,
+                    'Y-m-d'
+                );
         }
     }
 
@@ -59,22 +55,8 @@ class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function listAction()
     {
-        $patients = $this->patientRepository->findAllBySearchTerm($searchTerm = '');
-        $this->view->assignMultiple([
-            'patients' => $patients,
-            'searchTerm' => $searchTerm
-        ]);
-    }
-
-    /**
-     * action show
-     *
-     * @param \CodeID\AccountingSystem\Domain\Model\Patient $patient
-     * @return void
-     */
-    public function showAction(\CodeID\AccountingSystem\Domain\Model\Patient $patient)
-    {
-        $this->view->assign('patient', $patient);
+        $patients = $this->patientRepository->findAll();
+        $this->view->assign('patients', $patients);
     }
 
     /**
@@ -86,15 +68,16 @@ class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     {
 
     }
+
     /**
      * action create
      *
-     * @param \CodeID\AccountingSystem\Domain\Model\Patient $newPatient
+     * @param \CodeID\AccountingSystem\Domain\Model\Patient $patient
      * @return void
      */
-    public function createAction(\CodeID\AccountingSystem\Domain\Model\Patient $newPatient)
+    public function createAction(\CodeID\AccountingSystem\Domain\Model\Patient $patient)
     {
-        $this->patientRepository->add($newPatient);
+        $this->patientRepository->add($patient);
         $this->redirect('list');
     }
 
@@ -105,6 +88,7 @@ class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function editAction(\CodeID\AccountingSystem\Domain\Model\Patient $patient)
     {
+        $this->view->assign('serviceProvider', $this->getFrontendUserData()['uid']);
         $this->view->assign('patient', $patient);
     }
 
@@ -130,27 +114,5 @@ class PatientController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     {
         $this->patientRepository->remove($patient);
         $this->redirect('list');
-    }
-
-    /**
-     * Returns an instance of the current Frontend User.
-     *
-     * @return \TYPO3\CMS\Frontend\Authentication\FrontendUserAuthentication
-     */
-    protected function getFrontendUser()
-    {
-        return $GLOBALS['TSFE']->fe_user;
-    }
-
-
-
-    /**
-     * Returns user data of the current Frontend User.
-     *
-     * @return array
-     */
-    protected function getFrontendUserData()
-    {
-        return $this->getFrontendUser()->user ? $this->getFrontendUser()->user : [];
     }
 }

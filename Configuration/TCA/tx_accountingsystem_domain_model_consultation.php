@@ -9,21 +9,22 @@ return [
         'delete' => 'deleted',
         'enablecolumns' => [
             'disabled' => 'hidden',
-            'starttime' => 'starttime',
+            'starttime' => 'starttime', // todo remove for all tables
+            // todo add consultations to invoice (une facture a 1 - n consultations)
+
             'endtime' => 'endtime',
         ],
         'searchFields' => 'date, place, note, comments, amount_code, quantity, price, point_value, tva, amount, invoice',
         'iconfile' => 'EXT:accounting_system/Resources/Public/Icons/tx_accountingsystem_domain_model_consultation.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'hidden, date, place, reason, note, comments, amount_code, quantity, price, point_value, tva, amount, invoice',
+        'showRecordFieldList' => 'hidden, date, place, reason, note, comments, amount_code, quantity, price, point_value, tva, amount, service_provider, is_invoiced, invoice',
     ],
     'types' => [
-        '1' => ['showitem' => 'hidden, date, place, reason, note, comments, amount_code, quantity, price, point_value, tva, amount, invoice, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'hidden, date, place, reason, note, comments, amount_code, quantity, price, point_value, tva, amount, service_provider, is_invoiced, invoice'],
     ],
     'columns' => [
         'hidden' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
@@ -34,34 +35,7 @@ return [
                 ],
             ],
         ],
-        'starttime' => [
-            'exclude' => true,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
-            'config' => [
-                'type' => 'input',
-                'size' => 13,
-                'eval' => 'datetime',
-                'default' => 0,
-            ],
-        ],
-        'endtime' => [
-            'exclude' => true,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
-            'config' => [
-                'type' => 'input',
-                'size' => 13,
-                'eval' => 'datetime',
-                'default' => 0,
-                'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
-                ],
-            ],
-        ],
-
         'date' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.consultationdate',
             'config' => [
                 'dbType' => 'datetime',
@@ -72,7 +46,6 @@ return [
             ],
         ],
         'place' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.place',
             'config' => [
                 'type' => 'input',
@@ -82,7 +55,6 @@ return [
         ],
 
         'reason' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.reason',
             'config' => [
                 'type' => 'input',
@@ -91,7 +63,6 @@ return [
             ],
         ],
         'note' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.notice',
             'config' => [
                 'type' => 'input',
@@ -100,7 +71,6 @@ return [
             ],
         ],
         'comments' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.comments',
             'config' => [
                 'type' => 'input',
@@ -108,8 +78,15 @@ return [
                 'eval' => 'trim'
             ],
         ],
+        'rate' => [
+            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.rate',
+            'config' => [
+                'type' => 'input',
+                'size' => 150,
+                'eval' => 'trim'
+            ],
+        ],
         'amount_code' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.ctarif',
             'config' => [
                 'type' => 'input',
@@ -118,25 +95,22 @@ return [
             ],
         ],
         'quantity' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.quantity',
             'config' => [
                 'type' => 'input',
-                'size' => 150,
-                'eval' => 'trim'
+                'size' => 4,
+                'eval' => 'int'
             ],
         ],
         'price' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.price',
             'config' => [
                 'type' => 'input',
-                'size' => 150,
-                'eval' => 'trim'
+                'size' => 30,
+                'eval' => 'double2'
             ],
         ],
         'point_value' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.ptvalue',
             'config' => [
                 'type' => 'input',
@@ -145,7 +119,6 @@ return [
             ],
         ],
         'tva' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.tva',
             'config' => [
                 'type' => 'input',
@@ -154,34 +127,43 @@ return [
             ],
         ],
         'amount' => [
-            'exclude' => true,
             'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang.xlf:tx_accountingsystem_domain_model_consultation.amount',
             'config' => [
                 'type' => 'input',
-                'size' => 150,
-                'eval' => 'trim'
+                'size' => 30,
+                'eval' => 'double2'
             ],
         ],
-
+        'service_provider' => [
+            'label' => 'Accounter Id',
+            'config' => [
+                'type' => 'input',
+                'size' => 4,
+                'eval' => 'int'
+            ],
+        ],
+        'is_invoiced' => [
+            'label' => 'A été Facturée',
+            'exclude' => 1,
+            'config' => [
+                'type' => 'check',
+                'default' => '0'
+            ]
+        ],
         'invoice' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:accounting_system/Resources/Private/Language/locallang_db.xlf:tx_accountingsystem_domain_model_consultation.invoice',
+            'label' => 'Facture',
+            'exclude' => 1,
             'config' => [
                 'type' => 'inline',
                 'foreign_table' => 'tx_accountingsystem_domain_model_invoice',
-                'foreign_field' => 'consultation',
-                'maxitems' => 9999,
+                'foreign_field' => 'uid',
+                'maxitems' => 10,
                 'appearance' => [
-                    'collapseAll' => 0,
-                    'levelLinksPosition' => 'top',
-                    'showSynchronizationLink' => 1,
-                    'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
+                    'collapseAll' => 1,
+                    'expandSingle' => 1,
                 ],
             ],
-
         ],
-
         'patient' => [
             'config' => [
                 'type' => 'passthrough',
